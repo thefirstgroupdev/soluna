@@ -9,12 +9,7 @@ function scrollFunction() {
     document.getElementById("navbar").classList.remove("navbar-scroll");
   }
 
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-     document.getElementById("nav-tabs").classList.add("nav-tabs-scroll");
-   } else {
-     document.getElementById("nav-tabs").classList.remove("nav-tabs-scroll");
-   }
-
+  
 }
 
 
