@@ -1,25 +1,32 @@
-import "../styles/soluna.css"
 import {React, useEffect} from 'react'
 //import "../js/jquery-3.2.1.slim.min.js"
-import "../styles/bootstrap.min.css"
+// import "../public/bootstrap.min.css"
 //import 'bootstrap/dist/css/bootstrap.css';
 import Head from 'next/head'
 
-import "../styles/soluna.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import "../styles/soluna.css";
+
+import "../styles/slick.css";
+import "../styles/slick-theme.css";
+
 //import "../js/wow.min.js"
 //import "../js/masonry.pkgd.min.js"
 
 import "../js/soluna.js"
+//import "../public/slick/slick.min.js"
 
 function MyApp({ Component, pageProps }) {
-//   useEffect(()=>{
-//     import("bootstrap/dist/js/bootstrap");
-// },[])
+  useEffect(() => {
+    typeof document !== undefined 
+    ? import('bootstrap/dist/js/bootstrap') 
+    : null;
+    typeof window !== "undefined"
+    ? import('../public/slick/slick.min.js')
+    : null
+  }, []);
   return (<>
-    <Head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </Head>
-    
     <Component {...pageProps} />
     </>)
 }

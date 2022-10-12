@@ -7,9 +7,9 @@ import '../js/soluna'
 
 export default function Home() {
   return (
-  <html>
+  <>
   
-      <head>
+      <Head>
       <meta charSet="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content="Soluna Beach Club - Dubai beach club"/>
@@ -18,9 +18,9 @@ export default function Home() {
 
     <title>Soluna Beach Club</title>
 
-      </head>
+      </Head>
 
-      <body className="homepage" >
+      
 {/* style="background-image:url('img/soluna-homeapage-bg.jpg');" */}
 
  <nav className="navbar fixed-top" id="navbar">
@@ -61,7 +61,7 @@ export default function Home() {
     <div className="row justify-content-center">
       <div className="col-12">
         <div className="video-background hidden-xs">
-        <iframe width="100%" height="650px" src="https://www.youtube.com/embed/oyy47VHJ4GE?autoplay=1&amp;mute=1&amp;controls=0&amp;loop=1&amp;showinfo=0" title="YouTube video player" frameBorder="0" ></iframe>
+        <iframe width="100%" height="650px" src="https://www.youtube.com/embed/oyy47VHJ4GE?autoplay=0&amp;mute=1&amp;controls=0&amp;loop=1&amp;showinfo=0" title="YouTube video player" frameBorder="0" ></iframe>
       </div>
       </div>
     </div>
@@ -205,9 +205,6 @@ export default function Home() {
 
 </div>
 
-</body>
-
-
 {/* <!-- footer --> */}
 <footer className="footer" id="contact">
 <div className="container">
@@ -264,8 +261,7 @@ export default function Home() {
 </div>
 {/* container  */}
 </footer>
-</html>
 
-    
+</>
   )
 }
