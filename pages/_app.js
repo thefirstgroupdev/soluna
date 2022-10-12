@@ -5,6 +5,9 @@ import {React, useEffect} from 'react'
 import Head from 'next/head'
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import('bootstrap/dist/js/bootstrap') 
+
+import('../public/slick/slick.min.js') 
 
 import "../styles/soluna.css";
 
@@ -19,12 +22,12 @@ import "../js/soluna.js"
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    typeof document !== undefined 
-    ? import('bootstrap/dist/js/bootstrap') 
-    : null;
-    typeof window !== "undefined"
-    ? import('../public/slick/slick.min.js')
-    : null
+    // typeof document !== undefined 
+    // ? import('bootstrap/dist/js/bootstrap') 
+    // : null;
+    // typeof window !== "undefined"
+    // ? import('../public/slick/slick.min.js')
+    // : null
   }, []);
   return (<>
     <Component {...pageProps} />
