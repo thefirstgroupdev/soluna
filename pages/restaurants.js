@@ -3,8 +3,18 @@ import Head from 'next/head'
 import Link from 'next/Link'
 import { fetchAPI } from "../lib/api"
 import '../js/soluna'
-
+import ReactMarkdown from "react-markdown";
 export default function Restaurants ({restaurants}){
+  // const getAnimalsContent = animals => {
+  //   let content = [];
+  //   for (let idx in animals) {
+  //     const item = animals[idx];
+  //     content.push(<li key={item.id}>{item.animal}</li>);
+  //   }
+  //   return content;
+  // };
+
+  // return <ul>{getAnimalsContent(animals)}</ul>;
 
     return(
     <>
@@ -55,9 +65,9 @@ export default function Restaurants ({restaurants}){
 {/* navigation bar end  */}
 <br/><br/>
 <br/>
+{/* <br/>
 <br/>
-<br/>
-<br/>
+<br/>  */}
 
 
 <div id="restaurants">
@@ -74,6 +84,9 @@ export default function Restaurants ({restaurants}){
 </div>
  </div>
 
+ {/* Restaurant loop */}
+ {restaurants.data.map((restaurant) => (
+  <>
 <section id="enas">
     <div className="container-fluid">
 
@@ -85,132 +98,36 @@ export default function Restaurants ({restaurants}){
 
 
 <div className="carousel-layer-bg">
-        <img src="/rest-enas.jpg" alt="Special offer" className="img-fluid" />
-        <div className="carousel-layer-logo"><img src="/logo-rest-enas.png" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
+        <img src={`http://localhost:1337${restaurant.attributes.logo_image.data.attributes.url}`} alt="Special offer" className="img-fluid" />
+        <div className="carousel-layer-logo"><img src={`http://localhost:1337${restaurant.attributes.logo.data.attributes.url}`}  alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
     </div>
-</div>
-</div>
-
-{restaurants.data.map((restaurant) => (
-<p>{restaurant.attributes.name}</p>
-
-))}
-<div className="row mt-3 justify-content-center">
-
-  <div className="col-11 col-lg-4 mt-3 text-left wow fadeInLeft">
-    <h2  className='h2'>ÈNAS</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Donec vestibulum venenatis justo eget tincidunt. Nulla facilisi. Aenean mattis tortor eu felis commodo sodales.
-      Curabitur sollicitudin consectetur bibendum.</p>
-      <div className="text-center text-lg-left"><a href="" className="btn btn-link">Visit the website</a>
-      <br></br> <a href="" className="btn btn-link">Download Menu</a></div>
-  </div>
-  <div className="col-11 col-lg-5 text-center wow fadeInRight">
-    <div className="white-rounded-box">
-        <div className="h3">Opening hours</div>
-        <p>Mon - Wed: <br className="d-inline d-md-none" />9:00 AM - 12:00 AM<br/>
-          Thurs - Sun: <br className="d-inline d-md-none" />9:00 AM - 1:00 AM</p>
-        <div className="h3 mt-4">RESERVATIONS</div>
-        <p>+971 4 873 4445<br/>
-          <a href="mailto:soluna@solunabeach.ae">soluna@solunabeach.ae</a></p>
-          <p><a href="" className="btn btn-outline-primary">Book a Table</a></p>
-    </div>
-  </div>
-
-</div>
-
-
-</div>
-</section>
-
-
-<section id="risen">
-    <div className="container-fluid">
-
-
-    <div className="row justify-content-center">
-
-<div className="col-12 col-lg-10">
-  
-
-
-<div className="carousel-layer-bg">
-        <img src="https://www.solunabeachclub.ae/wp-content/uploads/2022/10/soluna-beach-club-risen.jpg" alt="Special offer" className="img-fluid" />
-        <div className="carousel-layer-logo"><img src="/logo-rest-risen.png" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
-    </div>
-
-   
- 
-
-  
-
 </div>
 </div>
 
 <div className="row mt-3 justify-content-center">
 
   <div className="col-11 col-lg-4 mt-3 text-left wow fadeInLeft">
-    <h2>Risen</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Donec vestibulum venenatis justo eget tincidunt. Nulla facilisi. Aenean mattis tortor eu felis commodo sodales.
-      Curabitur sollicitudin consectetur bibendum.</p>
-      <div className="text-center text-lg-left"><a href="" className="btn btn-link">Visit the website</a> <a href="" className="btn btn-link">Download Menu</a></div>
-  </div>
-  <div className="col-11 col-lg-5 text-center wow fadeInRight">
-    <div className="white-rounded-box">
-        <div className="h3">Opening hours</div>
-        <p>Mon - Wed: <br className="d-inline d-md-none" />9:00 AM - 12:00 AM<br/>
-          Thurs - Sun: <br className="d-inline d-md-none" />9:00 AM - 1:00 AM</p>
-        <div className="h3 mt-4">RESERVATIONS</div>
-        <p>+971 4 873 4445<br/>
-          <a href="mailto:soluna@solunabeach.ae">soluna@solunabeach.ae</a></p>
-          <p><a href="" className="btn btn-outline-primary">Book a Table</a></p>
-    </div>
-  </div>
-
-</div>
 
 
-</div>
-</section>
-
-<section id="risen">
-    <div className="container-fluid">
-
-<div className="row justify-content-center">
-
-<div className="col-12 col-lg-10">
-  <div className="carouselPlain">
-
-
-    <div>
-      <div className="carousel-layer-bg">
-          <img src="/rest-foodtrack.jpg" alt="FOODTRUCK" className="img-fluid" />
+    <h2  className='h2'>{restaurant.attributes.name}</h2>
+    <ReactMarkdown children={restaurant.attributes.description} escapeHtml={false} />
+      <div className="text-center text-lg-left">
+        <a href={restaurant.attributes.web_url} className="btn btn-link">Visit the website</a>
+      <br></br> 
+      <a href={`http://localhost:1337${restaurant.attributes.menu_upload.data.attributes.url}` } className="btn btn-link" target='_blank'>Download Menu</a>
       </div>
-    </div>
-  </div>
-</div>
-</div>
-
-
-<div className="row mt-3 justify-content-center">
-
-  <div className="col-11 col-lg-4 mt-3 text-left wow fadeInLeft">
-    <h2>FOODTRUCK</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Donec vestibulum venenatis justo eget tincidunt. Nulla facilisi. Aenean mattis tortor eu felis commodo sodales.
-      Curabitur sollicitudin consectetur bibendum.</p>
-      <div className="text-center text-lg-left"><a href="" className="btn btn-link">Visit the website</a> <a href="" className="btn btn-link">Download Menu</a></div>
   </div>
   <div className="col-11 col-lg-5 text-center wow fadeInRight">
     <div className="white-rounded-box">
         <div className="h3">Opening hours</div>
-        <p>Mon - Wed: <br className="d-inline d-md-none" />9:00 AM - 12:00 AM<br/>
-          Thurs - Sun: <br className="d-inline d-md-none" />9:00 AM - 1:00 AM</p>
+        <div>
+              <ReactMarkdown children={restaurant.attributes.opening_hours} escapeHtml={false} />
+              </div>
         <div className="h3 mt-4">RESERVATIONS</div>
-        <p>+971 4 873 4445<br/>
-          <a href="mailto:soluna@solunabeach.ae">soluna@solunabeach.ae</a></p>
-          <p><a href="" className="btn btn-outline-primary">Book a Table</a></p>
+        <div>
+        {restaurant.attributes.reserve.phone}<br/>
+          <a href="">{restaurant.attributes.reserve.email}</a></div>
+          <div><a href={restaurant.attributes.reserve.booking_url} className="btn btn-outline-primary">Book a Table</a></div> 
     </div>
   </div>
 
@@ -219,7 +136,8 @@ export default function Restaurants ({restaurants}){
 
 </div>
 </section>
-
+</>
+))}
 
 
 
