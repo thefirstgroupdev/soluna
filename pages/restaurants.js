@@ -1,8 +1,10 @@
 import React from 'react';
 import Head from 'next/head'
 import Link from 'next/Link'
+import { fetchAPI } from "../lib/api"
 import '../js/soluna'
-export default function Restaurants (){
+
+export default function Restaurants ({restaurants}){
 
     return(
     <>
@@ -86,15 +88,12 @@ export default function Restaurants (){
         <img src="/rest-enas.jpg" alt="Special offer" className="img-fluid" />
         <div className="carousel-layer-logo"><img src="/logo-rest-enas.png" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
     </div>
-
-   
- 
-
-  
-
 </div>
 </div>
 
+{restaurants.data.map((restaurant) => (
+<p>{restaurant.attributes.name}</p>
+))}
 
 <div className="row mt-3 justify-content-center">
 
@@ -285,4 +284,18 @@ export default function Restaurants (){
     
     )
 
+}
+
+export async function getServerSideProps() {
+  // Run API calls in parallel
+  const [restaurantsRes] = await Promise.all([
+    fetchAPI("/restaurants", { populate: "*" }),
+  ])
+
+  return {
+    props: {
+      restaurants: restaurantsRes,
+      
+    },
+  }
 }
