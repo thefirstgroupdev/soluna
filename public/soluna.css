@@ -230,6 +230,19 @@ body {color:#000000; background-color:#efece4; background-size:100%; background-
   .homepage .navbar.navbar-scroll .navbar-brand {opacity:1;}
 }
 
+@media (min-width:768px) {
+  .restaurants .navbar-brand-home {display:inline-block;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      top: 30px;
+    opacity:0;}
+  .restaurants .navbar.navbar-scroll .navbar-brand-home {opacity:1;}
+  .restaurants .navbar .navbar-brand-logo {opacity:1;}
+  .restaurants .navbar.navbar-scroll .navbar-brand-logo {opacity:0;}
+}
+
 /* buttons */
 .Link {color:#91C0A7; font-weight:300;}
 .Link:hover {text-decoration:none; color:#120B0D;}
@@ -276,7 +289,8 @@ body {color:#000000; background-color:#efece4; background-size:100%; background-
 .img-special {position:relative;}
 .img-special:after,
 .img-special:before {display:inline-block; position:absolute; content:'';}
-.img-special:before {background-image:url('/soluna-elementC.png');
+.img-special:before {
+  background-image:url('/soluna-elementC.png');
     z-index:1;
     right: -17%;
     bottom: 15%;
@@ -284,7 +298,8 @@ body {color:#000000; background-color:#efece4; background-size:100%; background-
     background-repeat: no-repeat;
     height: 171px;
     width:300px;}
-.img-special:after {background-image: url('/soluna-elementB.png');
+.img-special:after {
+  background-image: url('/soluna-elementB.png');
     z-index: 3;
     right: -5%;
     bottom: 0;
@@ -322,7 +337,7 @@ body {color:#000000; background-color:#efece4; background-size:100%; background-
 .footer {background-color:#1B3557; color:#ffffff; padding:30px 0; font-size:18px; clear:both;}
 .footer .h3 {font-size:58px; color:#ffffff; text-align:center; margin-bottom:2rem;}
 .footer .h4 {font-size:32px; color:#ffffff; text-transform:uppercase; margin-bottom:25px; text-align:center;}
-.footer .a {color:#91C0A7; font-weight:700;}
+.footer .a {color:#91C0A7; font-weight:700; }
 .footer .a:hover {color:#ffffff;}
 
 .footer .btn.btn-primary {margin-right:0;}
@@ -339,13 +354,13 @@ footer .border-b {border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bot
 .footer .input:focus::placeholder {opacity:0;}
 
 .nav-social {padding:0; white-space:nowrap;}
-.nav-social .li {list-style: none; display: inline-block; margin:0 10px;}
+.nav-social .li {list-style: none; display: inline-block; margin:0 30px;}
 .nav-social .li:first-child {margin-left:0;}
 .nav-social .li .a {display: inline-block;
     width: 35px;
     height: 35px;
     text-align: center;
-    margin: 0 3px;}
+    margin: 0 30px;}
 .nav-social .li .img {height:22px; margin:11px auto;}
 
 .nav-social .path {fill: #91C0A7;}
@@ -430,7 +445,7 @@ footer .border-b {border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bot
 .slick-prev:before {transform:rotate(180deg)}
 
 .carousel-layer-bg {position:relative; z-index:1; top:0; left:0;}
-.carousel-layer-text {position:absolute; z-index:2; top:15%; left:10%; max-width:40%;}
+.carousel-layer-text {position:absolute; z-index:2; top:15%; right:10%; max-width:40%;}
 .carousel-layer-logo {position:absolute; z-index:2; top:5%; left:50%; width:200px; margin-left:-100px;}
 
 /***************************************************/
@@ -694,7 +709,12 @@ Copyright (c) 2014 Daniel Eden
   display:inline-block;
 }
 
+
 .navbar-toggler .navbar-toggler-icon:first-child {
   transform: rotate(180deg);
   background-color: #61785B;
+}
+
+.description{
+  white-space: pre !important;
 }

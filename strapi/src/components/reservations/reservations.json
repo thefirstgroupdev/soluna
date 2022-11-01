@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_reservations_reservations",
+  "info": {
+    "displayName": "reservations"
+  },
+  "options": {},
+  "attributes": {
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "booking_url": {
+      "type": "string"
+    }
+  }
+}
+

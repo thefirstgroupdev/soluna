@@ -3,14 +3,10 @@ import {React, useEffect} from 'react'
 // import "../public/bootstrap.min.css"
 //import 'bootstrap/dist/css/bootstrap.css';
 import Head from 'next/head'
-
 import "bootstrap/dist/css/bootstrap.min.css";
-import('bootstrap/dist/js/bootstrap') 
-
-import('../public/slick/slick.min.js') 
-
+// import('bootstrap/dist/js/bootstrap'); 
+// import('../public/slick/slick.min.js') ;
 import "../styles/soluna.css";
-
 import "../styles/slick.css";
 import "../styles/slick-theme.css";
 

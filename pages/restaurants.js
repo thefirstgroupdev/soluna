@@ -5,29 +5,31 @@ import '../js/soluna'
 export default function Restaurants (){
 
     return(
-    <html>
+    <>
         <Head>
            
     <meta charSet="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, sh
+  rink-to-fit=no"/>
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
     <meta name="author" content=""/>
 
     <title>Restaurants | Soluna Beach Club</title>
 </Head>
-   <body id="top" className="rest-body secondary-page" ></body>
-
-   <nav className="navbar fixed-top" id="navbar">
+   
+{/* navigation bar */}
+   <nav className="restaurants navbar fixed-top" id="navbar">
       <div className="container">
-      <div className="navbar-brand">
+        
+      <div className="restaurants navbar-brand-logo">
           <a className="" href="/">
-            <img src="/logo-soluna-beach-club.svg" className="img-fluid sbc-logo" alt="Soluna Beach Club" title="Soluna Beach Club" />
+            <img src="https://www.solunabeachclub.ae/wp-content/themes/soluna-theme/img/logo-soluna-beach-club.svg" className="img-fluid sbc-logo" alt="Soluna Beach Club" title="Soluna Beach Club" width="256" height="90"/>
           </a>
-      </div> 
-      <div className="navbar-brand-home">
+      </div>
+        <div className="restaurants navbar-brand-home">
           <img src="/logo-soluna-beach-club.svg" className="img-fluid sbc-logo-home" alt="Soluna Beach Club" title="Soluna Beach Club" />
-    </div>
+    </div>  
 
         <button className="navbar-toggler collapsed ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSBC" aria-controls="navbarSBC" aria-expanded="false" aria-label="Toggle navigation" title="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -35,18 +37,28 @@ export default function Restaurants (){
           <span className="navbar-toggler-icon"></span>
         </button>
 
-      <div className="collapse navbar-collapse" id="navbarSBC">
+      <div className="navbar-collapse navbar-collapse-ul collapse" id="navbarSBC">
         <ul className="navbar-nav ml-auto text-right pr-3 pr-lg-0">
-          <li className="nav-item active"><a className="nav-link" href="index.html">Home</a></li>
-          <li className="nav-item"><a className="nav-link" href="restaurants.html">Restaurants</a></li>
-          
+          <li className="nav-item active"><a className="nav-link" href="/">Home</a></li>
+          <li className="nav-item"><a className="nav-link" href="/restaurants">Restaurants</a></li>
+           {/* <li className="nav-item"><a className="nav-link" href="/">Offers</a></li>
+          <li className="nav-item"><a className="nav-link" href="/">Contact</a></li>  */}
         </ul>
       </div>
 
     </div>
-    </nav>
+    
 
-<section id="restaurants">
+</nav> 
+{/* navigation bar end  */}
+<br/><br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<div id="restaurants">
     <div className="container-fluid">
 
 <div className="row justify-content-center">
@@ -58,7 +70,7 @@ export default function Restaurants (){
 </div>
 
 </div>
-</section>
+ </div>
 
 <section id="enas">
     <div className="container-fluid">
@@ -67,30 +79,18 @@ export default function Restaurants (){
 <div className="row justify-content-center">
 
 <div className="col-12 col-lg-10">
-  <div className="carouselPlain">
+  
 
 
-    <div>
-      <div className="carousel-layer-bg">
-          <img src="/rest-enas.jpg" alt="Enas" className="img-fluid" />
-      </div>
+<div className="carousel-layer-bg">
+        <img src="/rest-enas.jpg" alt="Special offer" className="img-fluid" />
+        <div className="carousel-layer-logo"><img src="/logo-rest-enas.png" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
     </div>
 
-    <div>
-      <div className="carousel-layer-bg">
-          <img src="/special-offer-02.jpg" alt="Enas" className="img-fluid" />
-      </div>
-    </div>
+   
+ 
 
-    <div>
-      <div className="carousel-layer-bg">
-          <img src="/special-offer-03.jpg" alt="Enas" className="img-fluid" />
-      </div>
-    </div>
-
-  </div>
-
-  <div className="carousel-layer-logo"><img src="/logo-rest-enas.png" alt="" className="img-fluid" /></div>
+  
 
 </div>
 </div>
@@ -103,7 +103,8 @@ export default function Restaurants (){
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       Donec vestibulum venenatis justo eget tincidunt. Nulla facilisi. Aenean mattis tortor eu felis commodo sodales.
       Curabitur sollicitudin consectetur bibendum.</p>
-      <div className="text-center text-lg-left"><a href="" className="btn btn-link">Visit the website</a> <a href="" className="btn btn-link">Download Menu</a></div>
+      <div className="text-center text-lg-left"><a href="" className="btn btn-link">Visit the website</a>
+      <br></br> <a href="" className="btn btn-link">Download Menu</a></div>
   </div>
   <div className="col-11 col-lg-5 text-center wow fadeInRight">
     <div className="white-rounded-box">
@@ -128,37 +129,24 @@ export default function Restaurants (){
     <div className="container-fluid">
 
 
-<div className="row justify-content-center">
+    <div className="row justify-content-center">
 
 <div className="col-12 col-lg-10">
-  <div className="carouselPlain">
+  
+
+
+<div className="carousel-layer-bg">
+        <img src="https://www.solunabeachclub.ae/wp-content/uploads/2022/10/soluna-beach-club-risen.jpg" alt="Special offer" className="img-fluid" />
+        <div className="carousel-layer-logo"><img src="/logo-rest-risen.png" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
+    </div>
 
    
-    <div>
-      <div className="carousel-layer-bg">
-          <img src="/rest-risen.jpg" alt="Risen" className="img-fluid" />
-      </div>
-    </div>
+ 
 
-    <div>
-      <div className="carousel-layer-bg">
-        <img src="/rest-risen.jpg" alt="Risen" className="img-fluid" />
-      </div>
-    </div>
-   
-    <div>
-      <div className="carousel-layer-bg">
-        <img src="/rest-risen.jpg" alt="Risen" className="img-fluid" />
-      </div>
-    </div>
-
-  </div>
-
-  <div className="carousel-layer-logo"><img src="/logo-rest-risen.png" alt="" className="img-fluid" /></div>
+  
 
 </div>
 </div>
-
 
 <div className="row mt-3 justify-content-center">
 
@@ -239,37 +227,31 @@ export default function Restaurants (){
 {/* <!-- footer --> */}
 <footer className="footer" id="contact">
 <div className="container">
-
-<div className="row justify-content-start justify-content-lg-center align-items-center border-b">
-
+<div className="footerhead-padding row justify-content-start justify-content-lg-center align-items-center border-b">
   <div className="col-12 col-lg-6">
     <h3 className="footer h3">Soluna BEACH</h3>
   </div>
-
   <div className="col-12 col-lg-6 footer-links">
     <ul className="footer ul">
-      <li className="footer li"><Link href="index.html"><a className="footer a footer-links li a">Home</a></Link></li>
-      <li className="footer li"> <Link href="restaurants.html"><a className="footer a footer-links li a"> Restaurants</a></Link></li>
-      <li className="footer li"> <Link href="privacy-policy.html"><a className="footer a footer-links li a">Privacy Policy</a></Link></li>
+      <li className="footer li"><Link href="/"><a className="footer a footer-links li a">Home</a></Link></li>
+      <li className="footer li"> <Link href="/restaurants"><a className="footer a footer-links li a"> Restaurants</a></Link></li>
+      {/* <li className="footer li"> <Link href="#"><a className="footer a footer-links li a">Privacy Policy</a></Link></li> */}
     </ul>
   </div>
-
 </div>
-
 <div className="row justify-content-start justify-content-lg-center">
-
   <div className="col-12 col-md-6 col-xl-3 text-center text-md-left">
     <p>Al Amal Street<br/>
       Business Bay, Dubai, UAE<br/>
       PO BOX 215373</p>
-    <p><a href="#" target="_blank" rel="nofollow"  className="footer a"><a>Get Directions</a></a></p>
+    <p><Link href="#" target="_blank" rel="nofollow" ><a  className="footer a">Get Directions</a></Link></p>
     </div>
-
     <div className="col-12 col-md-6 col-xl-4 text-center text-md-left">
       <p>Direct: +971 873 4444<br/>
-        Reservations: +971 4 873 4445<br/>
-        <Link href="mailto:soluna@solunabeach.ae"><a className="footer a">soluna@solunabeach.ae</a></Link></p>
-        <ul className="footerlist nav-social ">
+        Reservations: +971 4 873 4445<br/></p>
+        <p><Link href="mailto:soluna@solunabeach.ae"><a className="footer a">soluna@solunabeach.ae</a></Link></p>
+        
+       <ul className="footerlist nav-social ">
           <li className="footerlistli social-instagram "><Link href="#" target="_blank"><a className="footer a footer-links li a">
               <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M16.0417 3.31793C20.3194 3.31793 20.8542 3.31793 22.592 3.45161C27.0035 3.58529 29.0087 5.72417 29.1424 10.002C29.276 11.7398 29.276 12.1408 29.276 16.4186C29.276 20.6964 29.276 21.2311 29.1424 22.8353C29.0087 27.1131 26.8698 29.252 22.592 29.3856C20.8542 29.5193 20.4531 29.5193 16.0417 29.5193C11.7639 29.5193 11.2292 29.5193 9.625 29.3856C5.21354 29.252 3.20833 27.1131 3.07465 22.8353C2.94097 21.0974 2.94097 20.6964 2.94097 16.4186C2.94097 12.1408 2.94097 11.6061 3.07465 10.002C3.20833 5.72417 5.34722 3.58529 9.625 3.45161C11.2292 3.31793 11.7639 3.31793 16.0417 3.31793ZM16.0417 0.376953C11.6302 0.376953 11.0955 0.376953 9.49132 0.510634C3.60937 0.777995 0.401042 3.98633 0.133681 9.86827C0 11.4724 0 12.0072 0 16.4186C0 20.8301 0 21.3648 0.133681 22.969C0.401042 28.8509 3.60937 32.0592 9.49132 32.3266C11.0955 32.4603 11.6302 32.4603 16.0417 32.4603C20.4531 32.4603 20.9878 32.4603 22.592 32.3266C28.474 32.0592 31.6823 28.8509 31.9496 22.969C32.0833 21.3648 32.0833 20.8301 32.0833 16.4186C32.0833 12.0072 32.0833 11.4724 31.9496 9.86827C31.6823 3.98633 28.474 0.777995 22.592 0.510634C20.9878 0.376953 20.4531 0.376953 16.0417 0.376953ZM16.0417 8.13043C11.4965 8.13043 7.75347 11.8735 7.75347 16.4186C7.75347 20.9638 11.4965 24.7068 16.0417 24.7068C20.5868 24.7068 24.3299 20.9638 24.3299 16.4186C24.3299 11.8735 20.5868 8.13043 16.0417 8.13043ZM16.0417 21.7658C13.1007 21.7658 10.6944 19.3596 10.6944 16.4186C10.6944 13.4776 13.1007 11.0714 16.0417 11.0714C18.9826 11.0714 21.3889 13.4776 21.3889 16.4186C21.3889 19.3596 18.9826 21.7658 16.0417 21.7658ZM24.5972 5.99154C23.5278 5.99154 22.7257 6.79362 22.7257 7.86306C22.7257 8.93251 23.5278 9.73459 24.5972 9.73459C25.6667 9.73459 26.4687 8.93251 26.4687 7.86306C26.4687 6.79362 25.6667 5.99154 24.5972 5.99154Z" fill="#91C0A7"/>
@@ -287,7 +269,6 @@ export default function Restaurants (){
           </Link></li>
         </ul> 
   </div>
-
   <div className="col-12 col-md-12 col-xl-5 mt-5 mt-xl-0">
     <h4 className='footer h4'>Newsletter signup</h4>
     <form>
@@ -295,29 +276,13 @@ export default function Restaurants (){
       <button className="btn btn-primary btn-lg">SIGN UP</button>
     </form>
   </div>
-
   </div>
-
-
 </div>
 {/* container  */}
 </footer>
-
+</>
 
     
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/soluna.js"></script>
-
-   
-    <script type="text/javascript" src="slick/slick/slick.min.js"></script>
-
-    {/* <script src="js/wow.min.js"></script>
-    <script>
-          new WOW().init();
-    </script> */}
-
-    </html>
     )
 
 }

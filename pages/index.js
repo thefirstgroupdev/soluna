@@ -3,9 +3,47 @@ import Image from 'next/image'
 import React from 'react'
 import Link from "next/Link"
 import '../js/soluna'
+import { fetchAPI } from "../lib/api"
+import ImagesSlider from './slider'
+import Slider from "react-slick";
+import ReactMarkdown from "react-markdown";
 
-
-export default function Home() {
+export default function Home({homepage}) {
+  const settings = {
+    arrows:true,
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+   
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
   return (
   <>
   
@@ -20,8 +58,7 @@ export default function Home() {
 
       </Head>
 
-      
-{/* style="background-image:url('img/soluna-homeapage-bg.jpg');" */}
+     
 
  <nav className="navbar fixed-top" id="navbar">
       <div className="container">
@@ -61,12 +98,13 @@ export default function Home() {
     <div className="row justify-content-center">
       <div className="col-12">
         <div className="video-background hidden-xs">
-        <iframe width="100%" height="650px" src="https://www.youtube.com/embed/oyy47VHJ4GE?autoplay=0&amp;mute=1&amp;controls=0&amp;loop=1&amp;showinfo=0" title="YouTube video player" frameBorder="0" ></iframe>
+        <iframe width="100%" height="650px" src={`https://www.youtube.com/embed/${homepage.attributes.yt_video_id}?autoplay=0&amp;mute=1&amp;controls=0&amp;loop=1&amp;showinfo=0`} title="YouTube video player" frameBorder="0" ></iframe>
       </div>
       </div>
     </div>
 </div>
 </div> 
+
 {/* <!-- /video --> */}
 
 
@@ -75,19 +113,19 @@ export default function Home() {
     <div className="row justify-content-space-evenly">
 
       <div className="col-11 col-lg-6 col-xl-5 text-left wow fadeInLeft">
-        <h1 className="h1">About Soluna Beach</h1>
-        <p>Nestled amid the alluring Dubai coastline, the latest addition to the flourishing Beach Club scene from The First Group offers a contemporary
-          Mediterranean experience in the heart of The Palm Jumeirah.</p>
-        <p>Catering to residents and hotel guests alike, this vibrant family friendly oasis boasts endless sun-kissed beaches and glistening blue
-          waters with a variety of chic lounging areas offering sweeping views across the iconic skyline.</p>
+        <h1 className="h1">{homepage.attributes.name}</h1>
+        <div className='description'>
+        <ReactMarkdown children={homepage.attributes.description} escapeHtml={false} />
+        </div>
         <div className="white-rounded-box">
             <div className="h3">Opening hours</div>
-            <p>Mon - Wed: <br className="d-inline d-md-none" />9:00 AM - 12:00 AM<br/>
-              Thurs - Sun: <br className="d-inline d-md-none" />9:00 AM - 1:00 AM</p>
+            <div>
+              <ReactMarkdown children={homepage.attributes.opening_hours} escapeHtml={false} />
+              </div>
         </div>
       </div>
       <div className="col-11 col-lg-6 col-xl-6 text-center wow fadeInRight">
-        <div className="img-special"><img src="/about-soluna-beach.jpg" className="img-fluid border-radius" /></div>
+        <div className="img-special"><img src={`http://localhost:1337${homepage.attributes.featured_image.data.attributes.url}`} className="img-fluid border-radius" /></div>
       </div>
 
     </div>
@@ -102,30 +140,19 @@ export default function Home() {
 
 <div className="row justify-content-center bg-elementA">
 <div className="col-11 col-lg-9 col-xl-6 text-center">
-<h2 className="h2 wow fadeInDown">Restaurants</h2>
-<p>With three uniquely appointed restaurants serving up an extensive menu of globally inspired cuisine,
-  guests will discover a stylish haven set against the backdrop of warmhearted hospitality and sublime interior.</p>
-<p><Link href="restaurants.html" className="Link btn btn-link"><span className="span">Find out more</span></Link></p>
+<h2 className="h2 wow fadeInDown">{homepage.attributes.sub_section.title}</h2>
+<p>{homepage.attributes.sub_section.description}</p>
+<Link href={homepage.attributes.sub_section.link} ><a className="Link btn btn-link">Find out more</a></Link>
 </div>
 </div>
 
-{/* <!-- restaurants carousel --> */}
-<div className="row justify-content-center">
-<div className="col-12 p-0">
-<div data-slick='carouselToShow'>
-<div><img src="/restaurant-santeria.jpg" alt="Sante Ria" className="img-fluid" /></div>
-<div><img src="/restaurant-the-village-bistro.jpg" alt="Villate Bistro" className="img-fluid" /></div>
-<div><img src="/restaurant-risen.jpg" alt="Risen" className="img-fluid" /></div>
-<div><img src="/restaurant-theblacksmith.jpg" alt="Blacksmith" className="img-fluid" /></div>
-<div><img src="/restaurant-vyne.jpg" alt="Vyne" className="img-fluid" /></div>
-</div>
-</div></div>
-{/* <!-- /restaurants carousel --> */}
 
+<ImagesSlider />
 
 </div>
 {/* <!-- /container --> */}
 </div>
+
 
 
 {/* <!-- special offers --> */}
@@ -136,34 +163,38 @@ export default function Home() {
 <div className="col-11 col-lg-9 text-center">
 <h2 className=" h2 wow fadeInDown">Special offers</h2>
 </div>
-{/* 
-<!-- special offers carousel --> */}
-<div className="col-12 col-lg-10">
-<div className="carouselPlain">
-  {/* <!-- slide 1 --> */}
-  <div>
-    <div className="carousel-layer-bg">
+
+
+<div>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        charSet="UTF-8"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+      />
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+      />
+ <Slider {...settings}>
+        
+ <div className="carousel-layer-bg">
         <img src="/special-offer-01.jpg" alt="Special offer" className="img-fluid" />
         <div className="carousel-layer-text"><img src="/special-offers-risen-01.jpg" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
     </div>
-  </div>
-  {/* <!-- slide 2 --> */}
-  <div>
+        
     <div className="carousel-layer-bg">
         <img src="/special-offer-02.jpg" alt="Special offer" className="img-fluid" />
         <div className="carousel-layer-text"><img src="/special-offers-risen-02.jpg" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
     </div>
-  </div>
-  {/* <!-- slide 2 --> */}
-  <div>
-    <div className="carousel-layer-bg">
+
+        <div className="carousel-layer-bg">
         <img src="/special-offer-03.jpg" alt="Special offer" className="img-fluid" />
         <div className="carousel-layer-text"><img src="/special-offers-risen-03.jpg" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
     </div>
-  </div>
+      </Slider> 
 </div>
-</div>
-
 </div>
 
 </div>
@@ -208,7 +239,7 @@ export default function Home() {
 {/* <!-- footer --> */}
 <footer className="footer" id="contact">
 <div className="container">
-<div className="row justify-content-start justify-content-lg-center align-items-center border-b">
+<div className="footerhead-padding row justify-content-start justify-content-lg-center align-items-center border-b">
   <div className="col-12 col-lg-6">
     <h3 className="footer h3">Soluna BEACH</h3>
   </div>
@@ -216,7 +247,7 @@ export default function Home() {
     <ul className="footer ul">
       <li className="footer li"><Link href="/"><a className="footer a footer-links li a">Home</a></Link></li>
       <li className="footer li"> <Link href="/restaurants"><a className="footer a footer-links li a"> Restaurants</a></Link></li>
-      <li className="footer li"> <Link href="#"><a className="footer a footer-links li a">Privacy Policy</a></Link></li>
+      {/* <li className="footer li"> <Link href="#"><a className="footer a footer-links li a">Privacy Policy</a></Link></li> */}
     </ul>
   </div>
 </div>
@@ -229,8 +260,8 @@ export default function Home() {
     </div>
     <div className="col-12 col-md-6 col-xl-4 text-center text-md-left">
       <p>Direct: +971 873 4444<br/>
-        Reservations: +971 4 873 4445<br/>
-        <Link href="mailto:soluna@solunabeach.ae"><a className="footer a">soluna@solunabeach.ae</a></Link></p>
+        Reservations: +971 4 873 4445<br/></p>
+        <p><Link href="mailto:soluna@solunabeach.ae"><a className="footer a">soluna@solunabeach.ae</a></Link></p>
         
        <ul className="footerlist nav-social ">
           <li className="footerlistli social-instagram "><Link href="#" target="_blank"><a className="footer a footer-links li a">
@@ -264,4 +295,18 @@ export default function Home() {
 
 </>
   )
+}
+
+export async function getServerSideProps() {
+  // Run API calls in parallel
+  const [homepageRes] = await Promise.all([
+    fetchAPI("/homepage", { populate: "*" }),
+   ])
+
+  return {
+    props: {
+      homepage: homepageRes.data,
+      
+    },
+  }
 }

@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_pages_section_sub_sections",
+  "collectionName": "components_restaurants_sub_restaurants_subs",
   "info": {
-    "displayName": "sub_section",
-    "description": ""
+    "displayName": "restaurants_sub"
   },
   "options": {},
   "attributes": {
@@ -13,7 +12,7 @@
       "type": "text"
     },
     "link": {
-      "type": "richtext"
+      "type": "string"
     }
   }
 }
