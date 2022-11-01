@@ -93,8 +93,8 @@ export default function Restaurants ({restaurants}){
 
 {restaurants.data.map((restaurant) => (
 <p>{restaurant.attributes.name}</p>
-))}
 
+))}
 <div className="row mt-3 justify-content-center">
 
   <div className="col-11 col-lg-4 mt-3 text-left wow fadeInLeft">
