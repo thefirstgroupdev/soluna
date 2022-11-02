@@ -156,7 +156,7 @@ export default function Home({homepage}) {
 
 
 {/* <!-- special offers --> */}
-<div id="offers" className='section'>
+<div id="offers" >
 <div className="container" >
 
 <div className="row justify-content-center">
@@ -165,7 +165,7 @@ export default function Home({homepage}) {
 </div>
 
 
-<div>
+<div className="slider-padding-home">
       <link
         rel="stylesheet"
         type="text/css"
@@ -179,7 +179,7 @@ export default function Home({homepage}) {
       />
  <Slider {...settings}>
         
- <div className="carousel-layer-bg">
+ <div className="carousel-layer-bg" >
         <img src="/special-offer-01.jpg" alt="Special offer" className="img-fluid" />
         <div className="carousel-layer-text"><img src="/special-offers-risen-01.jpg" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
     </div>

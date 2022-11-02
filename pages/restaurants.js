@@ -111,7 +111,7 @@ export default function Restaurants ({restaurants}){
 
     <h2  className='h2'>{restaurant.attributes.name}</h2>
     <ReactMarkdown children={restaurant.attributes.description} escapeHtml={false} />
-      <div className="text-center text-lg-left">
+      <div className="text-lg-left">
         <a href={restaurant.attributes.web_url} className="btn btn-link">Visit the website</a>
       <br></br> 
       <a href={`http://localhost:1337${restaurant.attributes.menu_upload.data.attributes.url}` } className="btn btn-link" target='_blank'>Download Menu</a>

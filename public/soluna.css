@@ -437,15 +437,16 @@ footer .border-b {border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bot
 /****************************************/
 /********** ---- SLICK SLIDER ---- **********/
 /****************************************/
-.slick-slide {padding-left:10px; padding-right:10px;}
+.slick-slide {padding-left:0px; padding-right:0px;}
 .slick-prev, .slick-next {width:53px; height:53px; z-index:3;}
 .slick-prev {left: 25px;}
 .slick-next {right: 25px;}
 .slick-prev:before, .slick-next:before {font-size:0; background-image:url('/btn-arrow.png'); display:block; width:53px; height:53px; background-size:cover;}
 .slick-prev:before {transform:rotate(180deg)}
 
-.carousel-layer-bg {position:relative; z-index:1; top:0; left:50%;}
-.carousel-layer-text {position:absolute; z-index:2; top:15%; right:10%; max-width:40%;}
+.carousel-layer-bg {position:relative; z-index:1; top:0; left:10%; 
+  right: 10%;}
+.carousel-layer-text {position:absolute; z-index:2; top:15%; right:10%; max-width:40% !important;}
 .carousel-layer-logo {position:absolute; z-index:2; top:5%; left:50%; width:200px; margin-left:-100px;}
 
 /***************************************************/
