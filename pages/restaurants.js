@@ -189,7 +189,7 @@ export default function Restaurants ({restaurants}){
   <div className="col-12 col-md-12 col-xl-5 mt-5 mt-xl-0">
     <h4 className='footer h4'>Newsletter signup</h4>
     <form>
-      <input className="footer input" type="email" placeholder="Enter your email address"></input>
+      <input className="form-field input" type="email" placeholder="Enter your email address"></input>
       <button className="btn btn-primary btn-lg">SIGN UP</button>
     </form>
   </div>

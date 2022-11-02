@@ -7,7 +7,7 @@ import Slider from "react-slick";
 // import "slick-carousel/slick/slick-theme.css";
 
 
-export default function ImagesSlider(){
+export default function ImagesSlider({homepage}){
  const settings = {
     arrows:true,
     dots: true,
@@ -48,7 +48,8 @@ export default function ImagesSlider(){
     ]
   };
   return (
-
+    <>
+    
     <div>
       <link
         rel="stylesheet"
@@ -61,9 +62,12 @@ export default function ImagesSlider(){
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
       />
-      
+     
       <Slider {...settings}>
-        <div>
+      {homepage.attributes.slider_gallery.data.map((slides) => (
+      <>
+      <div><img src={`http://localhost:1337${slides.attributes.url}`}  alt="Carousel of restaurant images" className="img-fluid" /></div>
+        {/* <div>
         <img src="/restaurant-santeria.jpg" alt="Sante Ria" className="img-fluid" />
         </div>
         <div>
@@ -77,9 +81,14 @@ export default function ImagesSlider(){
         </div>
         <div>
         <img src="/restaurant-vyne.jpg" alt="Vyne" className="img-fluid" />
-        </div>
+        </div> */}
+        </>
+      ))}
       </Slider>
+      
     </div>
+    </>
+    
   );
 };
 

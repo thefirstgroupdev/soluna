@@ -4,46 +4,14 @@ import React from 'react'
 import Link from "next/Link"
 import '../js/soluna'
 import { fetchAPI } from "../lib/api"
-import ImagesSlider from './slider'
+import ImagesSlider from '../components/slider'
 import Slider from "react-slick";
 import ReactMarkdown from "react-markdown";
 
-export default function Home({homepage}) {
-  const settings = {
-    arrows:true,
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-   
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
+import Offers from './offers'
+
+export default function Home({homepage, offers}) {
+  
   return (
   <>
   
@@ -147,59 +115,13 @@ export default function Home({homepage}) {
 </div>
 
 
-<ImagesSlider />
+<ImagesSlider homepage={homepage}/>
 
 </div>
 {/* <!-- /container --> */}
 </div>
 
-
-
-{/* <!-- special offers --> */}
-<div id="offers" >
-<div className="container" >
-
-<div className="row justify-content-center">
-<div className="col-11 col-lg-9 text-center">
-<h2 className=" h2 wow fadeInDown">Special offers</h2>
-</div>
-
-
-<div className="slider-padding-home">
-      <link
-        rel="stylesheet"
-        type="text/css"
-        charSet="UTF-8"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-      />
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-      />
- <Slider {...settings}>
-        
- <div className="carousel-layer-bg" >
-        <img src="/special-offer-01.jpg" alt="Special offer" className="img-fluid" />
-        <div className="carousel-layer-text"><img src="/special-offers-risen-01.jpg" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
-    </div>
-        
-    <div className="carousel-layer-bg">
-        <img src="/special-offer-02.jpg" alt="Special offer" className="img-fluid" />
-        <div className="carousel-layer-text"><img src="/special-offers-risen-02.jpg" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
-    </div>
-
-        <div className="carousel-layer-bg">
-        <img src="/special-offer-03.jpg" alt="Special offer" className="img-fluid" />
-        <div className="carousel-layer-text"><img src="/special-offers-risen-03.jpg" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
-    </div>
-      </Slider> 
-</div>
-</div>
-
-</div>
-{/* <!-- /container --> */}
-</div>
+<Offers offers={offers}/>
 
 
 {/* <!-- instagram gallery feed --> */}
@@ -218,7 +140,8 @@ export default function Home({homepage}) {
 
 <div className="masonry"><div className="masonry-sizer">1</div>
 <div className="masonry-item"><img src="/gallery/01.jpg" alt=""/></div>
-<div className="masonry-item masonry-item-height2"><img src="/gallery/02.jpg" alt=""/></div>
+{/* <div className="masonry-item masonry-item-height2"><img src="/gallery/02.jpg" alt=""/></div> */}
+<div className="masonry-item"><img src="/gallery/02.jpg" alt=""/></div>
 <div className="masonry-item"><img src="/gallery/03.jpg" alt=""/></div>
 <div className="masonry-item"><img src="/gallery/04.jpg" alt=""/></div>
 <div className="masonry-item"><img src="/gallery/05.jpg" alt=""/></div>
@@ -226,12 +149,16 @@ export default function Home({homepage}) {
 <div className="masonry-item"><img src="/gallery/07.jpg" alt=""/></div>
 <div className="masonry-item"><img src="/gallery/08.jpg" alt=""/></div>
 <div className="masonry-item"><img src="/gallery/09.jpg" alt=""/></div>
-<div className="masonry-item masonry-item-height2"><img src="/gallery/10.jpg" alt=""/></div>
+{/* <div className="masonry-item masonry-item-height2"><img src="/gallery/10.jpg" alt=""/></div>
 <div className="masonry-item masonry-item-height2"><img src="/gallery/11.jpg" alt=""/></div>
-<div className="masonry-item masonry-item-height2"><img src="/gallery/12.jpg" alt=""/></div>
+<div className="masonry-item masonry-item-height2"><img src="/gallery/12.jpg" alt=""/></div> */}
+<div className="masonry-item "><img src="/gallery/10.jpg" alt=""/></div>
+<div className="masonry-item "><img src="/gallery/11.jpg" alt=""/></div>
+<div className="masonry-item "><img src="/gallery/12.jpg" alt=""/></div>
 <div className="masonry-item"><img src="gallery/13.jpg" alt=""/></div>
 <div className="masonry-item"><img src="gallery/14.jpg" alt=""/></div>
-<div className="masonry-item masonry-item-width2"><img src="/gallery/15.jpg" alt=""/></div>
+{/* <div className="masonry-item masonry-item-width2"><img src="/gallery/15.jpg" alt=""/></div> */}
+<div className="masonry-item "><img src="/gallery/15.jpg" alt=""/></div>
 </div></div>
 
 </div>
@@ -284,7 +211,7 @@ export default function Home({homepage}) {
   <div className="col-12 col-md-12 col-xl-5 mt-5 mt-xl-0">
     <h4 className='footer h4'>Newsletter signup</h4>
     <form>
-      <input className="footer input" type="email" placeholder="Enter your email address"></input>
+      <input className="form-feild input" type="email" placeholder="Enter your email address"></input>
       <button className="btn btn-primary btn-lg">SIGN UP</button>
     </form>
   </div>
@@ -299,14 +226,15 @@ export default function Home({homepage}) {
 
 export async function getServerSideProps() {
   // Run API calls in parallel
-  const [homepageRes] = await Promise.all([
+  const [homepageRes,offerRes] = await Promise.all([
     fetchAPI("/homepage", { populate: "*" }),
+    fetchAPI("/offers", { populate: "*" }),
    ])
 
   return {
     props: {
       homepage: homepageRes.data,
-      
+      offers:offerRes,
     },
   }
 }
