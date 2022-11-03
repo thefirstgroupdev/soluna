@@ -65,9 +65,10 @@ export default function Offers ({offers}){
       />
  <Slider {...settings}>
  {offers.data.map((offer) => (
+  
       <>
       
- <div className="carousel-layer-bg" >
+ <div className="carousel-layer-bg" key={offer}>
         <img src={`http://localhost:1337${offer.attributes.slide_banner.data.attributes.url}`} alt="Special offer" className="img-fluid" />
         <div className="carousel-layer-text"><img src={`http://localhost:1337${offer.attributes.overlay_image.data.attributes.url}`} alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
     </div>

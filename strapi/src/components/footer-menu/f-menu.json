@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_footer_menu_f_menus",
+  "info": {
+    "displayName": "f_menu",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

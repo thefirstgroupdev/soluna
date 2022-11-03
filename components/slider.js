@@ -66,7 +66,7 @@ export default function ImagesSlider({homepage}){
       <Slider {...settings}>
       {homepage.attributes.slider_gallery.data.map((slides) => (
       <>
-      <div><img src={`http://localhost:1337${slides.attributes.url}`}  alt="Carousel of restaurant images" className="img-fluid" /></div>
+      <div key={slides}><img src={`http://localhost:1337${slides.attributes.url}`}  alt="Carousel of restaurant images" className="img-fluid" /></div>
         {/* <div>
         <img src="/restaurant-santeria.jpg" alt="Sante Ria" className="img-fluid" />
         </div>

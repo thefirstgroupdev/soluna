@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_footer_address_addresses",
+  "info": {
+    "displayName": "address",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "address": {
+      "type": "richtext"
+    },
+    "directions_link": {
+      "type": "string"
+    },
+    "directions_name": {
+      "type": "string"
+    }
+  }
+}
