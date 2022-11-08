@@ -10,11 +10,7 @@ if (typeof window === "object") {
       document.getElementById("navbar").classList.remove("navbar-scroll");
     }
   }
-  let navbar = document.querySelector(".navbar");
-navbar.addEventListener("click", () => {
-  navbar.classList.toggle("active");
-  navbar.classList.remove("no-animation");
-});
+
 
 
   

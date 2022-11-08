@@ -18,11 +18,9 @@ export default function Footer ({footers}){
   
     <ul className="footer ul">
     {footers.attributes.menu_item.map((footer) => (
-    <>
-      <li className="footer li" key={footer}><Link href={footer.link}><a className="footer a footer-links li a" >{footer.name}</a></Link></li>
-      {/* <li className="footer li"> <Link href="/restaurants"><a className="footer a footer-links li a"> Restaurants</a></Link></li> */}
-      {/* <li className="footer li"> <Link href="#"><a className="footer a footer-links li a">Privacy Policy</a></Link></li> */}
-      </>
+    
+      <li className="footer li" key={footer.id}><Link href={footer.link}><a className="footer a footer-links li a" >{footer.name}</a></Link></li>
+
   ))}
     </ul>
    
@@ -30,11 +28,11 @@ export default function Footer ({footers}){
 </div>
 <div className="row justify-content-start justify-content-lg-center">
   <div className="col-12 col-md-6 col-xl-3 text-center text-md-left">
-    <ReactMarkdown children={footers.attributes.address.address} escapeHtml={false} />
+    <ReactMarkdown children={footers.attributes.address.address}  />
     <p><Link href={footers.attributes.address.directions_link} target="_blank" rel="nofollow" ><a  className="footer a">{footers.attributes.address.directions_name}</a></Link></p>
     </div>
     <div className="col-12 col-md-6 col-xl-4 text-center text-md-left">
-      <ReactMarkdown children={footers.attributes.contact_info} escapeHtml={false} />
+      <ReactMarkdown children={footers.attributes.contact_info}  />
         <p><Link href={`mailto:${footers.attributes.email}`}><a className="footer a">{footers.attributes.email}</a></Link></p>
        
         

@@ -66,14 +66,17 @@ export default function Offers ({offers}){
  <Slider {...settings}>
  {offers.data.map((offer) => (
   
-      <>
       
- <div className="carousel-layer-bg" key={offer}>
+ <div className="carousel-layer-bg" key={offer.id}>
         <img src={`http://localhost:1337${offer.attributes.slide_banner.data.attributes.url}`} alt="Special offer" className="img-fluid" />
         <div className="carousel-layer-text"><img src={`http://localhost:1337${offer.attributes.overlay_image.data.attributes.url}`} alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
     </div>
         
-    {/* <div className="carousel-layer-bg">
+   
+ 
+    ))}
+      </Slider> 
+       {/* <div className="carousel-layer-bg">
         <img src="/special-offer-02.jpg" alt="Special offer" className="img-fluid" />
         <div className="carousel-layer-text"><img src="/special-offers-risen-02.jpg" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
     </div>
@@ -82,9 +85,6 @@ export default function Offers ({offers}){
         <img src="/special-offer-03.jpg" alt="Special offer" className="img-fluid" />
         <div className="carousel-layer-text"><img src="/special-offers-risen-03.jpg" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
     </div> */}
-    </>
-    ))}
-      </Slider> 
 </div>
 </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import "../js/soluna"
-
+import Link from 'next/Link';
 
 export default function Navbar (){
 
@@ -8,9 +8,9 @@ export default function Navbar (){
 <><nav className="navbar fixed-top" id="navbar">
       <div className="container">
         <div className="navbar-brand">
-          <a className="" href="/">
+          <Link href="#"><a className="">
             <img src="/logo-soluna-beach-club.svg" className="img-fluid sbc-logo" alt="Soluna Beach Club" title="Soluna Beach Club" />
-          </a>
+          </a></Link>
       </div> 
        <div className="navbar-brand-home">
           <img src="/logo-soluna-beach-club.svg" className="img-fluid sbc-logo-home" alt="Soluna Beach Club" title="Soluna Beach Club" />
@@ -24,8 +24,8 @@ export default function Navbar (){
 
       <div className="navbar-collapse navbar-collapse-ul collapse" id="navbarSBC">
         <ul className="navbar-nav ml-auto text-right pr-3 pr-lg-0">
-          <li className="nav-item active"><a className="nav-link" href="/">Home</a></li>
-          <li className="nav-item"><a className="nav-link" href="/restaurants">Restaurants</a></li>
+          <li className="nav-item active"><Link href="#"><a className="nav-link">Home</a></Link></li>
+          <li className="nav-item"><Link href="/restaurants"><a className="nav-link" >Restaurants</a></Link></li>
            {/* <li className="nav-item"><a className="nav-link" href="/">Offers</a></li>
           <li className="nav-item"><a className="nav-link" href="/">Contact</a></li>  */}
      </ul> 

@@ -65,9 +65,13 @@ export default function ImagesSlider({homepage}){
      
       <Slider {...settings}>
       {homepage.attributes.slider_gallery.data.map((slides) => (
-      <>
-      <div key={slides}><img src={`http://localhost:1337${slides.attributes.url}`}  alt="Carousel of restaurant images" className="img-fluid" /></div>
-        {/* <div>
+      
+      <div key={slides.id}><img src={`http://localhost:1337${slides.attributes.url}`}  alt="Carousel of restaurant images" className="img-fluid" /></div>
+        
+        
+      ))}
+      </Slider>
+      {/* <div>
         <img src="/restaurant-santeria.jpg" alt="Sante Ria" className="img-fluid" />
         </div>
         <div>
@@ -82,10 +86,6 @@ export default function ImagesSlider({homepage}){
         <div>
         <img src="/restaurant-vyne.jpg" alt="Vyne" className="img-fluid" />
         </div> */}
-        </>
-      ))}
-      </Slider>
-      
     </div>
     </>
     

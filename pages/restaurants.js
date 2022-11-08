@@ -7,6 +7,7 @@ import '../js/soluna'
 import ReactMarkdown from "react-markdown";
 import Footer from '../components/footer';
 import Navbar from '../components/navbar';
+
 export default function Restaurants ({restaurants,footers}){
   // const getAnimalsContent = animals => {
   //   let content = [];
@@ -57,8 +58,8 @@ export default function Restaurants ({restaurants,footers}){
 
  {/* Restaurant loop */}
  {restaurants.data.map((restaurant) => (
-  <>
-<section id="enas">
+  
+<section id="enas" key={restaurant.id}>
     <div className="container-fluid">
 
 
@@ -81,7 +82,7 @@ export default function Restaurants ({restaurants,footers}){
 
 
     <h2  className='h2'>{restaurant.attributes.name}</h2>
-    <ReactMarkdown children={restaurant.attributes.description} escapeHtml={false} />
+    <ReactMarkdown children={restaurant.attributes.description} />
       <div className="text-lg-left">
         <a href={restaurant.attributes.web_url} className="btn btn-link">Visit the website</a>
       <br></br> 
@@ -92,7 +93,7 @@ export default function Restaurants ({restaurants,footers}){
     <div className="white-rounded-box">
         <div className="h3">Opening hours</div>
         <div>
-              <ReactMarkdown children={restaurant.attributes.opening_hours} escapeHtml={false} />
+              <ReactMarkdown children={restaurant.attributes.opening_hours} />
               </div>
         <div className="h3 mt-4">RESERVATIONS</div>
         <div>
@@ -107,7 +108,7 @@ export default function Restaurants ({restaurants,footers}){
 </div>
 </div>
 </section>
-</>
+
 ))}
 
 

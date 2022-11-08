@@ -35,18 +35,17 @@ export default function Home({homepage, offers, footers}) {
 
 
 {/* <!-- video section --> */}
- <div id="video" className="section">
+<div id="video" className="section">
   <div className="container" >
     <div className="row justify-content-center">
       <div className="col-12">
         <div className="video-background hidden-xs">
-        <iframe width="100%" height="650px" src={`https://www.youtube.com/embed/${homepage.attributes.yt_video_id}?autoplay=0&amp;mute=1&amp;controls=0&amp;loop=1&amp;showinfo=0`} title="YouTube video player" frameBorder="0" ></iframe>
+        <iframe width="100%" height="650px" src={`https://www.youtube.com/embed/${homepage.attributes.yt_video_id}?autoplay=0&amp;mute=1&amp;controls=0&amp;loop=1&amp;showinfo=0`} title="YouTube video player" frameBorder="0" allow=''></iframe>
       </div>
       </div>
     </div>
 </div>
-</div> 
-
+</div>
 {/* <!-- /video --> */}
 
 
@@ -57,12 +56,12 @@ export default function Home({homepage, offers, footers}) {
       <div className="col-11 col-lg-6 col-xl-5 text-left wow fadeInLeft">
         <h1 className="h1">{homepage.attributes.name}</h1>
         <div className='description'>
-        <ReactMarkdown children={homepage.attributes.description} escapeHtml={false} />
+        <ReactMarkdown children={homepage.attributes.description}  />
         </div>
         <div className="white-rounded-box">
             <div className="h3">Opening hours</div>
             <div>
-              <ReactMarkdown children={homepage.attributes.opening_hours} escapeHtml={false} />
+              <ReactMarkdown children={homepage.attributes.opening_hours}  />
               </div>
         </div>
       </div>
@@ -84,7 +83,7 @@ export default function Home({homepage, offers, footers}) {
 <div className="col-11 col-lg-9 col-xl-6 text-center">
 <h2 className="h2 wow fadeInDown">{homepage.attributes.sub_section.title}</h2>
 <p>{homepage.attributes.sub_section.description}</p>
-<Link href={`http://localhost:3000${homepage.attributes.sub_section.link}`} ><a className="Link btn btn-link">Find out more</a></Link>
+<Link href={homepage.attributes.sub_section.link} ><a className="Link btn btn-link">Find out more</a></Link>
 </div>
 </div>
 
