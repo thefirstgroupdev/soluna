@@ -51,7 +51,7 @@ export default function Offers ({offers}){
 
 
 
-<div className="slider-padding-home">
+<div className="slider-padding-offers">
       <link
         rel="stylesheet"
         type="text/css"

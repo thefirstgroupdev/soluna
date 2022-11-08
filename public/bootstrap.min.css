@@ -2578,7 +2578,7 @@ a.btn.disabled,fieldset:disabled a.btn{
     text-decoration:underline
 }
 .btn-link.focus,.btn-link:focus{
-    text-decoration:underline;
+    /* text-decoration:underline; */
     box-shadow:none
 }
 .btn-link.disabled,.btn-link:disabled{
@@ -3493,7 +3493,7 @@ input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-
 }
 .nav-pills .nav-link.active,.nav-pills .show>.nav-link{
     color:#fff;
-    background-color:#007bff
+    background-color:#fff
 }
 .nav-fill .nav-item{
     -ms-flex:1 1 auto;

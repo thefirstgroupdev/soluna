@@ -8,7 +8,7 @@ import ReactMarkdown from "react-markdown";
 import Footer from '../components/footer';
 import Navbar from '../components/navbar';
 
-export default function Restaurants ({restaurants,footers}){
+export default function Restaurants ({restaurants,footers,header}){
   // const getAnimalsContent = animals => {
   //   let content = [];
   //   for (let idx in animals) {
@@ -34,16 +34,14 @@ export default function Restaurants ({restaurants,footers}){
     <title>Restaurants | Soluna Beach Club</title>
 </Head>
    
-<Navbar/>
-<br/><br/>
-<br/>
-<br/>
-{/* <br/>
-<br/>  */}
+<Navbar header={header}/>
 
+ <br/>
+<br/>  
 
+<div className="section" >
 <div id="restaurants">
-    <div className="container-fluid">
+    <div className="container">
 
 <div className="row justify-content-center">
   <div className="col-11 col-lg-9 col-xl-6 text-center">
@@ -54,6 +52,7 @@ export default function Restaurants ({restaurants,footers}){
 </div>
 
 </div>
+ </div>
  </div>
 
  {/* Restaurant loop */}
@@ -84,9 +83,9 @@ export default function Restaurants ({restaurants,footers}){
     <h2  className='h2'>{restaurant.attributes.name}</h2>
     <ReactMarkdown children={restaurant.attributes.description} />
       <div className="text-lg-left">
-        <a href={restaurant.attributes.web_url} className="btn btn-link">Visit the website</a>
-      <br></br> 
-      <a href={`http://localhost:1337${restaurant.attributes.menu_upload.data.attributes.url}` } className="btn btn-link" target='_blank'>Download Menu</a>
+        <a href={restaurant.attributes.web_url} className="Link btn btn-link">Visit the website</a>
+      &nbsp;
+      <a href={`http://localhost:1337${restaurant.attributes.menu_upload.data.attributes.url}` } className="Link btn btn-link" target='_blank'>Download Menu</a>
       </div>
   </div>
   <div className="col-11 col-lg-5 text-center wow fadeInRight">
@@ -123,13 +122,15 @@ export default function Restaurants ({restaurants,footers}){
 
 export async function getServerSideProps() {
   // Run API calls in parallel
-  const [restaurantsRes,footersRes] = await Promise.all([
+  const [headerRes,restaurantsRes,footersRes] = await Promise.all([
+    fetchAPI("/header-menu", { populate: "*" }),
     fetchAPI("/restaurants", { populate: "*" }),
     fetchAPI("/footer", { populate: "*" }),
   ])
 
   return {
     props: {
+      header: headerRes,
       restaurants: restaurantsRes,
       footers: footersRes.data,
       

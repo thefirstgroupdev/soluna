@@ -15,7 +15,7 @@ export default function ImagesSlider({homepage}){
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
-    initialSlide: 0,
+    
     
     responsive: [
       {
@@ -49,8 +49,8 @@ export default function ImagesSlider({homepage}){
   };
   return (
     <>
-    
-    <div>
+<div className="slider-padding">
+    <div >
       <link
         rel="stylesheet"
         type="text/css"
@@ -61,12 +61,12 @@ export default function ImagesSlider({homepage}){
         rel="stylesheet"
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-      />
+      /></div>
      
       <Slider {...settings}>
       {homepage.attributes.slider_gallery.data.map((slides) => (
       
-      <div key={slides.id}><img src={`http://localhost:1337${slides.attributes.url}`}  alt="Carousel of restaurant images" className="img-fluid" /></div>
+      <div className="carousel-layer-bg" key={slides.id}><img src={`http://localhost:1337${slides.attributes.url}`}  alt="Carousel of restaurant images" className="img-fluid" /></div>
         
         
       ))}

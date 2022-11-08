@@ -9,11 +9,11 @@ import ImagesSlider from '../components/slider'
 import Slider from "react-slick";
 import ReactMarkdown from "react-markdown";
 
-import Offers from './offers'
+import Offers from '../components/offers'
 import Footer from '../components/footer'
 import Navbar from '../components/navbar'
 
-export default function Home({homepage, offers, footers}) {
+export default function Home({homepage, offers, footers, header}) {
   
   return (
   <>
@@ -31,7 +31,7 @@ export default function Home({homepage, offers, footers}) {
 
      
 
- <Navbar/>
+ <Navbar header={header}/>
 
 
 {/* <!-- video section --> */}
@@ -93,8 +93,8 @@ export default function Home({homepage, offers, footers}) {
 </div>
 {/* <!-- /container --> */}
 </div>
-
-<Offers offers={offers}/>
+<div id="offers">
+<Offers offers={offers}/></div>
 
 
 {/* <!-- instagram gallery feed --> */}
@@ -144,7 +144,8 @@ export default function Home({homepage, offers, footers}) {
 
 export async function getServerSideProps() {
   // Run API calls in parallel
-  const [homepageRes,offerRes,footersRes] = await Promise.all([
+  const [headerRes, homepageRes,offerRes,footersRes] = await Promise.all([
+    fetchAPI("/header-menu", { populate: "*" }),
     fetchAPI("/homepage", { populate: "*" }),
     fetchAPI("/offers", { populate: "*" }),
     fetchAPI("/footer", { populate: "*" }),
@@ -152,6 +153,7 @@ export async function getServerSideProps() {
 
   return {
     props: {
+      header: headerRes,
       homepage: homepageRes.data,
       offers:offerRes,
       footers: footersRes.data,

@@ -109,7 +109,7 @@ body {color:#000000; background-color:#efece4; background-size:100%; background-
   .section#video {padding-bottom:0;}
 }
 
-/* navigation */
+/* navigation
 .restaurants  .navbar-brand{opacity:1;}
 .navbar {padding:10px 0 !important;}
 
@@ -166,7 +166,7 @@ body {color:#000000; background-color:#efece4; background-size:100%; background-
 /* .navbar-toggler.collapsed .navbar-toggler-icon {display:inline;} */
 
 
-.navbar-toggler .navbar-toggler-icon:first-child {transform: rotate(180deg);}
+/* .navbar-toggler .navbar-toggler-icon:first-child {transform: rotate(180deg);}
 .navbar-toggler .navbar-toggler-icon:last-child {transform: rotate(180deg);}
 
 .navbar-toggler .collapsed .navbar-toggler-icon:first-child {top: 3px; transform: rotate(0);}
@@ -190,7 +190,86 @@ body {color:#000000; background-color:#efece4; background-size:100%; background-
   .section#video {margin-top:220px;}
   .navbar-collapse-ul
    {padding:130px 30px 30px 30px !important;}
+} */ 
+/* navigation */
+
+nav.navbar {padding:10px 0 !important;}
+
+.navbar-nav .nav-link {font-weight:500;}
+
+.navbar .navbar-brand {margin:0 auto 0 0; position:relative;}
+.navbar .sbc-logo {margin:0 auto; width:320px; max-width:80%; opacity:1; top:10px; left:0; position:relative;}
+
+.navbar .sbc-logo,
+.navbar-toggler,
+.navbar-brand {
+  -webkit-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -o-transition: all .3s linear;
+  transition: all .3s linear;}
+
+  .navbar.navbar-scroll .sbc-logo {width:133px; top:0; height:60px;}
+  .navbar.navbar-scroll .navbar-toggler {top:20px;}
+
+.navbar > .container {position:relative;}
+.navbar.navbar-scroll  {background-color:#ffffff;}
+
+.navbar-toggler {
+    position: absolute;
+    right:10px;
+    top:10px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    padding:0;
+    box-shadow: none;
+    outline: none;
+    z-index:3;
 }
+
+.navbar-toggler:focus, .navbar-toggler:focus-within {box-shadow: none; outline: none;}
+.navbar-toggler-icon {
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+    background-color: #61785B;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width:30px;
+}
+.navbar.navbar-scroll .navbar-toggler .navbar-toggler-icon {background-color:#61785B;}
+
+.navbar-toggler .navbar-toggler-icon:nth-child(2) {display:none;}
+.navbar-toggler.collapsed .navbar-toggler-icon {display:inline;}
+
+.navbar-toggler .navbar-toggler-icon:first-child {transform: rotate(150deg);}
+.navbar-toggler .navbar-toggler-icon:last-child {transform: rotate(-150deg);}
+
+.navbar-toggler.collapsed .navbar-toggler-icon:first-child {top: 3px; transform: rotate(0);}
+.navbar-toggler.collapsed .navbar-toggler-icon:last-child {top: 21px; transform: rotate(0);}
+
+.navbar-collapse {background-color: #ffffff; padding:0; max-width: 300px;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    z-index: 1;}
+
+.navbar-collapse ul {padding:80px 30px 30px 30px !important;}
+
+.navbar-brand-home {display:none;}
+
+@media (min-width:576px) {
+  .navbar .sbc-logo {top:0; height:90px;}
+  .navbar-toggler {top:30px; right:20px;}
+  .navbar-toggler, .navbar-toggler-icon {width:50px;}
+  section#video {margin-top:220px;}
+  .navbar-collapse ul {padding:130px 30px 30px 30px !important;}
+}
+
  .homepage{
   background-image:url('/soluna-homeapage-bg.jpg');
   color: #000000;
@@ -246,36 +325,36 @@ body {color:#000000; background-color:#efece4; background-size:100%; background-
   .homepage .navbar.navbar-scroll .navbar-brand {opacity:1;}
 }
 @media (min-width:768px) {
-  .seconadary-page .navbar-brand-home {display:inline-block;
+  .secondary-page .navbar-brand-home {display:inline-block;
       margin: 0 auto;
       width: 100%;
       text-align: center;
       position: absolute;
       top: 30px;
     opacity:1;}
-  .seconadary-page .navbar.navbar-scroll .navbar-brand-home {opacity:0;}
-  .seconadary-page .navbar .navbar-brand {opacity:0;}
-  .seconadary-page .navbar.navbar-scroll .navbar-brand {opacity:1;}
+  .secondary-page .navbar.navbar-scroll .navbar-brand-home {opacity:0;}
+  .secondary-page .navbar .navbar-brand {opacity:0;}
+  .secondary-page .navbar.navbar-scroll .navbar-brand {opacity:1;}
 }
 
 
 @media (max-width:768px) {
-  .seconadary-page .navbar-brand-home {display:inline-block;
+  .secondary-page .navbar-brand-home {display:inline-block;
       margin: 0 auto;
       width: 100%;
       text-align: center;
       position: absolute;
       top: 30px;
     opacity:0;}
-  .seconadary-page .navbar.navbar-scroll .navbar-brand-home {opacity:0;}
-  .seconadary-page .navbar .navbar-brand {opacity:1;}
-  .seconadary-page .navbar.navbar-scroll .navbar-brand {opacity:1;}
+  .secondary-page .navbar.navbar-scroll .navbar-brand-home {opacity:0;}
+  .secondary-page .navbar .navbar-brand {opacity:1;}
+  .secondary-page .navbar.navbar-scroll .navbar-brand {opacity:1;}
 }
 
 
 
 /* buttons */
-.Link {color:#91C0A7; font-weight:300;}
+.Link {text-decoration:none;color:#91C0A7; font-weight:300;}
 .Link:hover {text-decoration:none; color:#120B0D;}
 
 .btn {color:#1B3557; border-radius: 20px; padding:16px 36px; font-size:18px; line-height:150%; text-transform:uppercase; font-weight:700;}
@@ -366,7 +445,7 @@ body {color:#000000; background-color:#efece4; background-size:100%; background-
 .footer {background-color:#1B3557; color:#ffffff; padding:30px 0; font-size:18px; clear:both;}
 .footer .h3 {font-size:58px; color:#ffffff; text-align:center; margin-bottom:2rem;}
 .footer .h4 {font-size:32px; color:#ffffff; text-transform:uppercase; margin-bottom:25px; text-align:center;}
-.footer .a {color:#91C0A7; font-weight:700;}
+.footer .a {color:#91C0A7; font-weight:700; text-decoration: none;}
 .footer .a:hover {color:#ffffff;}
 
 .footer .btn.btn-primary {margin-right:0;}
@@ -473,8 +552,8 @@ footer .border-b {border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bot
 .slick-prev:before, .slick-next:before {font-size:0; background-image:url('/btn-arrow.png'); display:block; width:53px; height:53px; background-size:cover;}
 .slick-prev:before {transform:rotate(180deg)}
 
-.carousel-layer-bg {position:relative; z-index:1; top:0; left:0%; right:0%}
-.carousel-layer-text {position:absolute; z-index:2; top:15%; left:10%; max-width:40% !important;}
+.carousel-layer-bg {position:relative; z-index:1; top:0; left:0;}
+.carousel-layer-text {position:absolute; z-index:2; top:15%; left:10%; max-width:40%;}
 .carousel-layer-logo {position:absolute; z-index:2; top:5%; left:50%; width:200px; margin-left:-100px;}
 
 /***************************************************/
@@ -739,12 +818,21 @@ Copyright (c) 2014 Daniel Eden
 }
 
 .navbar-toggler .navbar-toggler-icon:first-child {
-  transform: rotate(180deg);
+  transform: rotate(150deg);
   background-color: #61785B;
 }
 
-.slider-padding-home{
-  padding:0px 150px !important;
+.slider-padding-offers{
+  padding:0px 120px !important;
+}
+.slider-padding{
+  
 }
 
+.menu-color{
+  color:#91C0A7 !important;
+}
+.menu-color:hover{
+  color:#120B0D !important;
+}
 
