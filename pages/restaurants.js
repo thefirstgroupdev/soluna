@@ -7,6 +7,7 @@ import '../js/soluna'
 import ReactMarkdown from "react-markdown";
 import Footer from '../components/footer';
 import Navbar from '../components/navbar';
+import Image from 'next/image';
 
 export default function Restaurants ({restaurants,footers,header}){
   // const getAnimalsContent = animals => {
