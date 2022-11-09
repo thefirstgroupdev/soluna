@@ -72,21 +72,6 @@ export default function ImagesSlider({homepage}){
         
       ))}
       </Slider>
-      {/* <div>
-        <img src="/restaurant-santeria.jpg" alt="Sante Ria" className="img-fluid" />
-        </div>
-        <div>
-        <img src="/restaurant-the-village-bistro.jpg" alt="Villate Bistro" className="img-fluid" />
-        </div>
-        <div>
-        <img src="/restaurant-risen.jpg" alt="Risen" className="img-fluid" />
-        </div>
-        <div>
-        <img src="/restaurant-theblacksmith.jpg" alt="Blacksmith" className="img-fluid" />
-        </div>
-        <div>
-        <img src="/restaurant-vyne.jpg" alt="Vyne" className="img-fluid" />
-        </div> */}
     </div>
     </>
     

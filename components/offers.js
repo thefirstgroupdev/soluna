@@ -77,15 +77,7 @@ export default function Offers ({offers}){
  
     ))}
       </Slider> 
-       {/* <div className="carousel-layer-bg">
-        <img src="/special-offer-02.jpg" alt="Special offer" className="img-fluid" />
-        <div className="carousel-layer-text"><img src="/special-offers-risen-02.jpg" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
-    </div>
 
-        <div className="carousel-layer-bg">
-        <img src="/special-offer-03.jpg" alt="Special offer" className="img-fluid" />
-        <div className="carousel-layer-text"><img src="/special-offers-risen-03.jpg" alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
-    </div> */}
 </div>
 </div>
 
