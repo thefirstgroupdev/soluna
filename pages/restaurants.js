@@ -70,8 +70,8 @@ export default function Restaurants ({restaurants,footers,header}){
 
 
 <div className="carousel-layer-bg">
-        <img src={`http://localhost:1337${restaurant.attributes.logo_image.data.attributes.url}`} alt="Special offer" className="img-fluid" />
-        <div className="carousel-layer-logo"><img src={`http://localhost:1337${restaurant.attributes.logo.data.attributes.url}`}  alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
+        <Image src={`http://localhost:1337${restaurant.attributes.logo_image.data.attributes.url}`} alt="Special offer" className="img-fluid" width={1500} height={800}/>
+        <div className="carousel-layer-logo"><Image src={`http://localhost:1337${restaurant.attributes.logo.data.attributes.url}`}  alt="Restaurants" className="img-fluid" width={500} height={350}/></div>
     </div>
 </div>
 </div>
