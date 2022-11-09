@@ -10,16 +10,6 @@ import Navbar from '../components/navbar';
 import Image from 'next/image';
 
 export default function Restaurants ({restaurants,footers,header, homepage}){
-  // const getAnimalsContent = animals => {
-  //   let content = [];
-  //   for (let idx in animals) {
-  //     const item = animals[idx];
-  //     content.push(<li key={item.id}>{item.animal}</li>);
-  //   }
-  //   return content;
-  // };
-
-  // return <ul>{getAnimalsContent(animals)}</ul>;
 
     return(
     <>
