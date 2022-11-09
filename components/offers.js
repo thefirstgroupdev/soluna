@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from "react-slick";
 import ReactMarkdown from "react-markdown";
+import Image from 'next/image';
 
 export default function Offers ({offers}){
     const settings = {
@@ -68,10 +69,10 @@ export default function Offers ({offers}){
   
       
  <div className="carousel-layer-bg" key={offer.id}>
-        <img src={`http://localhost:1337${offer.attributes.slide_banner.data.attributes.url}`} alt="Special offer" className="img-fluid" />
-        <div className="carousel-layer-text"><img src={`http://localhost:1337${offer.attributes.overlay_image.data.attributes.url}`} alt="Risen: Rise'n'shine | Breakfast special: Get Coffee and free croissant from us" className="img-fluid" /></div>
+        <Image src={`http://localhost:1337${offer.attributes.slide_banner.data.attributes.url}`} alt="Special offer" className="img-fluid" width={1400} height={700}/>
+        <div className="carousel-layer-text"><Image src={`http://localhost:1337${offer.attributes.overlay_image.data.attributes.url}`} alt="Risen" className="img-fluid" width={580} height={450}/></div>
     </div>
-        
+      
    
  
     ))}

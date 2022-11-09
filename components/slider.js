@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/Link";
 
 import Slider from "react-slick";
+import Image from "next/image";
 
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
@@ -66,7 +67,7 @@ export default function ImagesSlider({homepage}){
       <Slider {...settings}>
       {homepage.attributes.slider_gallery.data.map((slides) => (
       
-      <div className="carousel-layer-bg" key={slides.id}><img src={`http://localhost:1337${slides.attributes.url}`}  alt="Carousel of restaurant images" className="img-fluid" /></div>
+      <div className="carousel-layer-bg" key={slides.id}><Image src={`http://localhost:1337${slides.attributes.url}`}  alt="Carousel of restaurant images" className="img-fluid" layout="responsive" width={800} height={400}/></div>
         
         
       ))}
