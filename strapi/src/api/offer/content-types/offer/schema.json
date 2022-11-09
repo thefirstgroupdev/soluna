@@ -4,7 +4,8 @@
   "info": {
     "singularName": "offer",
     "pluralName": "offers",
-    "displayName": "Offers"
+    "displayName": "Offers",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,24 +13,26 @@
   "pluginOptions": {},
   "attributes": {
     "overlay_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "slide_banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

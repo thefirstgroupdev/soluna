@@ -21,12 +21,14 @@ export default function Navbar ({header}){
 <nav className="navbar fixed-top" id="navbar">
       <div className="container">
         <div className="navbar-brand">
-          <a className="" href="index.html">
+          <Link href="#"><a className="" >
             <img src="/logo-soluna-beach-club.svg" className="img-fluid sbc-logo" alt="Soluna Beach Club" title="Soluna Beach Club" />
-          </a>
+          </a></Link>
       </div>
       <div className="navbar-brand-home">
+      <Link href="#"><a className="" >
           <img src="/logo-soluna-beach-club.svg" className="img-fluid sbc-logo-home" alt="Soluna Beach Club" title="Soluna Beach Club" />
+        </a></Link>
     </div>
 
         <button className="navbar-toggler collapsed ml-auto mr-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSBC" aria-controls="navbarSBC" aria-expanded="false" aria-label="Toggle navigation" title="Toggle navigation">

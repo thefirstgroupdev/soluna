@@ -103,6 +103,14 @@
         }
       },
       "type": "richtext"
+    },
+    "opening_hours_title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }

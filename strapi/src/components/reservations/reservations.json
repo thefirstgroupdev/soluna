@@ -1,7 +1,8 @@
 {
   "collectionName": "components_reservations_reservations",
   "info": {
-    "displayName": "reservations"
+    "displayName": "reservations",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,7 +14,9 @@
     },
     "booking_url": {
       "type": "string"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }
-

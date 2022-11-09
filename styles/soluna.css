@@ -499,6 +499,16 @@ footer .border-b {border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bot
     height: 100%;
     top: 0%;}
 
+    /* instagallery */
+.instagallery {position: relative; width:100%; padding-top: 56.25%; height: 100% /* 16:9 Aspect Ratio */; overflow: hidden; }
+.iframe {
+	 position: absolute; 
+	width: 102%;
+    left: 0%;
+    height: 100%;
+    top: 0%;
+  overflow: auto;}
+
 /* image gallery */
 .img-gallery .img {
     float: left;

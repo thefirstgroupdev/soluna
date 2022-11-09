@@ -9,7 +9,7 @@ import Footer from '../components/footer';
 import Navbar from '../components/navbar';
 import Image from 'next/image';
 
-export default function Restaurants ({restaurants,footers,header}){
+export default function Restaurants ({restaurants,footers,header, homepage}){
   // const getAnimalsContent = animals => {
   //   let content = [];
   //   for (let idx in animals) {
@@ -46,9 +46,8 @@ export default function Restaurants ({restaurants,footers,header}){
 
 <div className="row justify-content-center">
   <div className="col-11 col-lg-9 col-xl-6 text-center">
-    <h1 className='h1'>Restaurants</h1>
-    <p>With three uniquely appointed restaurants serving up an extensive menu of globally inspired cuisine,
-      guests will discover a stylish haven set against the backdrop of warmhearted hospitality and sublime interior.</p>
+    <h1 className='h1'>{homepage.attributes.sub_section.title}</h1>
+    <p>{homepage.attributes.sub_section.description}</p>
   </div>
 </div>
 
@@ -56,7 +55,7 @@ export default function Restaurants ({restaurants,footers,header}){
  </div>
  </div>
 
- {/* Restaurant loop */}
+ {/* Restaurant content retrieval loop */}
  {restaurants.data.map((restaurant) => (
   
 <section id="enas" key={restaurant.id}>
@@ -84,18 +83,18 @@ export default function Restaurants ({restaurants,footers,header}){
     <h2  className='h2'>{restaurant.attributes.name}</h2>
     <ReactMarkdown children={restaurant.attributes.description} />
       <div className="text-lg-left">
-        <a href={restaurant.attributes.web_url} className="Link btn btn-link">Visit the website</a>
+        <Link href={restaurant.attributes.web_url}><a  className="Link btn btn-link">Visit the website</a></Link>
       &nbsp;
-      <a href={`http://localhost:1337${restaurant.attributes.menu_upload.data.attributes.url}` } className="Link btn btn-link" target='_blank'>Download Menu</a>
+      <Link href={`http://localhost:1337${restaurant.attributes.menu_upload.data.attributes.url}` } ><a className="Link btn btn-link" target='_blank'>Download Menu</a></Link>
       </div>
   </div>
   <div className="col-11 col-lg-5 text-center wow fadeInRight">
     <div className="white-rounded-box">
-        <div className="h3">Opening hours</div>
+        <div className="h3">{restaurant.attributes.opening_hours_title}</div>
         <div>
               <ReactMarkdown children={restaurant.attributes.opening_hours} />
               </div>
-        <div className="h3 mt-4">RESERVATIONS</div>
+        <div className="h3 mt-4">{restaurant.attributes.reserve.title}</div>
         <div>
         {restaurant.attributes.reserve.phone}<br/>
         <Link href={`mailto:${restaurant.attributes.reserve.email}`} ><a className="Link">{restaurant.attributes.reserve.email}</a></Link>
@@ -123,10 +122,11 @@ export default function Restaurants ({restaurants,footers,header}){
 
 export async function getServerSideProps() {
   // Run API calls in parallel
-  const [headerRes,restaurantsRes,footersRes] = await Promise.all([
+  const [headerRes,restaurantsRes,footersRes, homepageRes] = await Promise.all([
     fetchAPI("/header-menu", { populate: "*" }),
     fetchAPI("/restaurants", { populate: "*" }),
     fetchAPI("/footer", { populate: "*" }),
+    fetchAPI("/homepage", { populate: "*" }),
   ])
 
   return {
@@ -134,6 +134,7 @@ export async function getServerSideProps() {
       header: headerRes,
       restaurants: restaurantsRes,
       footers: footersRes.data,
+      homepage: homepageRes.data,
       
     },
   }
