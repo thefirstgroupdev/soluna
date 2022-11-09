@@ -56,12 +56,12 @@ export default function Home({homepage, offers, footers, header}) {
       <div className="col-11 col-lg-6 col-xl-5 text-left wow fadeInLeft">
         <h1 className="h1">{homepage.attributes.name}</h1>
         <div className='description'>
-        <ReactMarkdown children={homepage.attributes.description}  />
+        <ReactMarkdown>{homepage.attributes.description}</ReactMarkdown>
         </div>
         <div className="white-rounded-box">
             <div className="h3">{homepage.attributes.openingHours.title}</div>
             <div>
-              <ReactMarkdown children={homepage.attributes.openingHours.opening_hours}  />
+              <ReactMarkdown>{homepage.attributes.openingHours.opening_hours}</ReactMarkdown>
               </div>
         </div>
       </div>

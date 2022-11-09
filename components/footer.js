@@ -28,11 +28,11 @@ export default function Footer ({footers}){
 </div>
 <div className="row justify-content-start justify-content-lg-center">
   <div className="col-12 col-md-6 col-xl-3 text-center text-md-left">
-    <ReactMarkdown children={footers.attributes.address.address}  />
+    <ReactMarkdown  >{footers.attributes.address.address}</ReactMarkdown>
     <p><Link href={footers.attributes.address.directions_link} target="_blank" rel="nofollow" ><a  className="footer a">{footers.attributes.address.directions_name}</a></Link></p>
     </div>
     <div className="col-12 col-md-6 col-xl-4 text-center text-md-left">
-      <ReactMarkdown children={footers.attributes.contact_info}  />
+      <ReactMarkdown >{footers.attributes.contact_info}</ReactMarkdown>
         <p><Link href={`mailto:${footers.attributes.email}`}><a className="footer a">{footers.attributes.email}</a></Link></p>
        
         

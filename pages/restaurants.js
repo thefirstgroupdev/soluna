@@ -71,7 +71,7 @@ export default function Restaurants ({restaurants,footers,header, homepage}){
 
 
     <h2  className='h2'>{restaurant.attributes.name}</h2>
-    <ReactMarkdown children={restaurant.attributes.description} />
+    <ReactMarkdown>{restaurant.attributes.description}</ReactMarkdown>
       <div className="text-lg-left">
         <Link href={restaurant.attributes.web_url}><a  className="Link btn btn-link">Visit the website</a></Link>
       &nbsp;
@@ -82,7 +82,7 @@ export default function Restaurants ({restaurants,footers,header, homepage}){
     <div className="white-rounded-box">
         <div className="h3">{restaurant.attributes.opening_hours_title}</div>
         <div>
-              <ReactMarkdown children={restaurant.attributes.opening_hours} />
+              <ReactMarkdown>{restaurant.attributes.opening_hours} </ReactMarkdown>
               </div>
         <div className="h3 mt-4">{restaurant.attributes.reserve.title}</div>
         <div>
