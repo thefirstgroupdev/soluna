@@ -1045,10 +1045,10 @@ footer .border-b {
 /****************************************/
 /********** ---- SLICK SLIDER ---- **********/
 /****************************************/
-.slick-slide {
+ /* .slick-slide {
   padding-left: 10px;
   padding-right: 10px;
-}
+} */
 
 .slick-prev,
 .slick-next {
@@ -1101,7 +1101,19 @@ footer .border-b {
   left: 50%;
   width: 200px;
   margin-left: -100px;
+} 
+
+/* .slick-next {
+  right: 20px;
+  
+  z-index: 100;
 }
+
+.slick-prev {
+  left: 20px;
+  
+  z-index: 100;
+} */
 
 /***************************************************/
 /********** ---- INSTAGRAM / MASONRY ---- **********/
