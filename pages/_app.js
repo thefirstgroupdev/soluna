@@ -1,4 +1,4 @@
-import {React, useEffect} from 'react'
+import { React, useEffect } from 'react'
 //  import 'bootstrap/dist/css/bootstrap.min.css';
 import Head from 'next/head.js';
 import Script from 'next/script.js';
@@ -12,10 +12,10 @@ function MyApp({ Component, pageProps }) {
   //   require("bootstrap/dist/js/bootstrap.min.js");
   // }, []);
   return (<>
- 
-    
+
+
     <Component {...pageProps} />
-    </>)
+  </>)
 }
 
 export default MyApp

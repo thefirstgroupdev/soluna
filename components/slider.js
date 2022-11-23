@@ -8,21 +8,21 @@ import Image from "next/image";
 // import "slick-carousel/slick/slick-theme.css";
 
 
-export default function ImagesSlider({homepage}){
- const settings = {
-    arrows:true,
+export default function ImagesSlider({ homepage }) {
+  const settings = {
+    arrows: true,
     dots: true,
     infinite: false,
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
-    
-    
+
+
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-            arrows:true,
+          arrows: true,
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
@@ -32,7 +32,7 @@ export default function ImagesSlider({homepage}){
       {
         breakpoint: 600,
         settings: {
-            arrows:true,
+          arrows: true,
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2
@@ -41,7 +41,7 @@ export default function ImagesSlider({homepage}){
       {
         breakpoint: 480,
         settings: {
-            arrows:true,
+          arrows: true,
           slidesToShow: 1,
           slidesToScroll: 1
         }
@@ -50,31 +50,31 @@ export default function ImagesSlider({homepage}){
   };
   return (
     <>
-<div className="slider-padding">
-    <div >
-      <link
-        rel="stylesheet"
-        type="text/css"
-        charSet="UTF-8"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-      />
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-      /></div>
-     
-      <Slider {...settings}>
-      {homepage.attributes.slider_gallery.data.map((slides) => (
-      
-      <div className="carousel-layer-bg" key={slides.id}><Image src={`http://localhost:1337${slides.attributes.url}`}  alt="Carousel of restaurant images" className="img-fluid" layout="responsive" width={800} height={400}/></div>
-        
-        
-      ))}
-      </Slider>
-    </div>
+      <div className="slider-padding">
+        <div >
+          <link
+            rel="stylesheet"
+            type="text/css"
+            charSet="UTF-8"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+          /></div>
+
+        <Slider {...settings}>
+          {homepage.attributes.slider_gallery.data.map((slides) => (
+
+            <div className="carousel-layer-bg" key={slides.id}><Image src={`http://localhost:1337${slides.attributes.url}`} alt="Carousel of restaurant images" className="img-fluid" layout="responsive" width={800} height={400} /></div>
+
+
+          ))}
+        </Slider>
+      </div>
     </>
-    
+
   );
 };
 
