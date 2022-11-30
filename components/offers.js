@@ -7,14 +7,16 @@ import Head from 'next/head';
 
 export default function Offers({ offers }) {
   const settings = {
-    arrows: true,
+    arrows: false,
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
-    // centerPadding: '20px',
+    autoplay:true,
+    
+    speed:5000,
     responsive: [
       {
         breakpoint: 1024,
@@ -62,9 +64,10 @@ export default function Offers({ offers }) {
               <Slider {...settings}>
                 {offers.data.map((offer) => (
                   <div className="carousel-layer-bg carouselPlain slick-initialized slick-slider" key={offer.id}>
-                    <button className="slick-prev slick-arrow" aria-label="Previous" type="button" >Previous</button>
+                   
                     <Image src={`http://localhost:1337${offer.attributes.slide_banner.data.attributes.url}`} alt="Special offer" className="img-fluid" width={1400} height={700} />
                     <div className="carousel-layer-text"><Image src={`http://localhost:1337${offer.attributes.overlay_image.data.attributes.url}`} alt="Risen" className="img-fluid" width={580} height={450} /></div>
+                   
                   </div>
                 ))}
               </Slider>

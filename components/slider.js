@@ -10,12 +10,14 @@ import Image from "next/image";
 
 export default function ImagesSlider({ homepage }) {
   const settings = {
-    arrows: true,
+    arrows: false,
     dots: true,
     infinite: false,
-    speed:500,
+    speed:5000,
     slidesToShow: 2,
     slidesToScroll:1,
+    autoplay:true,
+    
     responsive: [
       {
         breakpoint: 1024,
