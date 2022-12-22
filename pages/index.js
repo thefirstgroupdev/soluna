@@ -83,10 +83,10 @@ export default function Home({ homepage, offers, footers, header }) {
             <div className="col-11 col-lg-9 col-xl-6 text-center">
               <h2 className="h2 wow fadeInDown">{homepage.attributes.sub_section.title}</h2>
               <p>{homepage.attributes.sub_section.description}</p>
-              <Link href={homepage.attributes.sub_section.link} ><a className="Link btn btn-link">Find out more</a></Link>
+              <Link href={homepage.attributes.sub_section.link}><a className="Link btn btn-link">Find out more</a></Link>
             </div>
           </div>
-
+          {homepage.attributes.sub_section.link}
 
           <ImagesSlider homepage={homepage} />
 
