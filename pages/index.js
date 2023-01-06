@@ -58,8 +58,8 @@ export default function Home({ homepage, offers, footers, header }) {
               <div className='description'>
                 <ReactMarkdown>{homepage.attributes.description}</ReactMarkdown>
               </div>
-              <div className="white-rounded-box">
-                <div className="h3">{homepage.attributes.openingHours.title}</div>
+              <div className="text-left mb-5 mb-xl-0">
+                <div className="h3-left">{homepage.attributes.openingHours.title}</div>
                 <div>
                   <ReactMarkdown>{homepage.attributes.openingHours.opening_hours}</ReactMarkdown>
                 </div>
@@ -83,10 +83,11 @@ export default function Home({ homepage, offers, footers, header }) {
             <div className="col-11 col-lg-9 col-xl-6 text-center">
               <h2 className="h2 wow fadeInDown">{homepage.attributes.sub_section.title}</h2>
               <p>{homepage.attributes.sub_section.description}</p>
-              <Link href={homepage.attributes.sub_section.link}><a className="Link btn btn-link">Find out more</a></Link>
+              <Link href={`http://localhost:3000${homepage.attributes.sub_section.link}`}><a className="Link btn btn-link">Find out more</a></Link>
+              
             </div>
           </div>
-          {homepage.attributes.sub_section.link}
+          
 
           <ImagesSlider homepage={homepage} />
 
@@ -113,7 +114,7 @@ export default function Home({ homepage, offers, footers, header }) {
 
           <div id="insta" >
             <div className="instagallery hidden-xs">
-              <iframe className="iframe" width="100%" height="100%" src="https://www.solunabeachclub.ae/instagram/" title="Instagram" frameBorder="0" allow='' ></iframe>
+              <iframe className="iframe" width={100} height={100} src="https://www.solunabeachclub.ae/instagram/" title="Instagram" frameBorder="0" allow='' ></iframe>
             </div>
           </div>
         </div>
@@ -144,3 +145,12 @@ export async function getServerSideProps() {
     },
   }
 }
+
+
+
+
+
+
+
+
+

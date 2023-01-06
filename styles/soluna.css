@@ -143,6 +143,17 @@ body {
   text-align: center;
 }
 
+.h3-left{
+  color: #000000;
+  font-size: 24px;
+  margin: 0 auto 15px;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: left;
+  font-family: 'CASEY', sans-serif;
+  text-transform: uppercase;
+}
+
 .h4 {
   font-family: 'CASEY', sans-serif;
   font-weight: 400;

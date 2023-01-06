@@ -38,12 +38,6 @@ export default function Navbar({ header }) {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarSBC">
-            {/* <ul className="navbar-nav ml-auto text-right pr-3 pr-lg-0">
-          <li className="nav-item active"><a className="menu-color nav-link" href="/">{header.data.attributes}</a></li>
-          <li className="nav-item"><a className="menu-color nav-link" href="/restaurants">Restaurants</a></li>
-           <li className="nav-item"><a className="menu-color nav-link" href="#offers">Offers</a></li>
-          <li className="nav-item"><a className="menu-color nav-link" href="#contact">Contact</a></li> 
-        </ul> */}
             <ul className="navbar-nav ml-auto text-right pr-3 pr-lg-0">
               {header.data.attributes.menuItems.map((header) => (
 

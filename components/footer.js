@@ -19,7 +19,7 @@ export default function Footer({ footers }) {
               <ul className="footer ul">
                 {footers.attributes.menu_item.map((footer) => (
 
-                  <li className="footer li" key={footer.id}><Link href={footer.link}><a className="footer a footer-links li a" >{footer.name}</a></Link></li>
+                  <li className="footer li" key={footer.id}><Link href={`http://localhost:3000${footer.link}`}><a className="footer a footer-links li a" >{footer.name}</a></Link></li>
 
                 ))}
               </ul>
