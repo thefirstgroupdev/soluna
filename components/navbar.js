@@ -12,7 +12,6 @@ export default function Navbar({ header }) {
   return (
     <>
       <Head>
-
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
       </Head>
       <Script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" />
@@ -30,19 +29,15 @@ export default function Navbar({ header }) {
               <img src="/logo-soluna-beach-club.svg" className="img-fluid sbc-logo-home" alt="Soluna Beach Club" title="Soluna Beach Club" />
             </a></Link>
           </div>
-
           <button className="navbar-toggler collapsed ml-auto mr-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSBC" aria-controls="navbarSBC" aria-expanded="false" aria-label="Toggle navigation" title="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             <span className="navbar-toggler-icon"></span>
             <span className="navbar-toggler-icon"></span>
           </button>
-
           <div className="collapse navbar-collapse" id="navbarSBC">
             <ul className="navbar-nav ml-auto text-right pr-3 pr-lg-0">
               {header.data.attributes.menuItems.map((header) => (
-
                 <li className="nav-item" key={header.id}><Link href={`http://localhost:3000${header.url}`}><a className="menu-color nav-link" >{header.name}</a></Link></li>
-
               ))}
             </ul>
           </div>
@@ -50,9 +45,6 @@ export default function Navbar({ header }) {
         </div>
         {/* container end */}
       </nav>
-
-
-
       {/* navigation bar end  */}
     </>
 

@@ -4,7 +4,6 @@ import ReactMarkdown from "react-markdown";
 
 
 export default function Footer({ footers }) {
-
   return (
     <>
       {/* <!-- footer --> */}
@@ -15,15 +14,11 @@ export default function Footer({ footers }) {
               <h3 className="footer h3">{footers.attributes.title}</h3>
             </div>
             <div className="col-12 col-lg-6 footer-links">
-
               <ul className="footer ul">
                 {footers.attributes.menu_item.map((footer) => (
-
                   <li className="footer li" key={footer.id}><Link href={`http://localhost:3000${footer.link}`}><a className="footer a footer-links li a" >{footer.name}</a></Link></li>
-
                 ))}
               </ul>
-
             </div>
           </div>
           <div className="row justify-content-start justify-content-lg-center">
@@ -34,8 +29,6 @@ export default function Footer({ footers }) {
             <div className="col-12 col-md-6 col-xl-4 text-center text-md-left">
               <ReactMarkdown >{footers.attributes.contact_info}</ReactMarkdown>
               <p><Link href={`mailto:${footers.attributes.email}`}><a className="footer a">{footers.attributes.email}</a></Link></p>
-
-
               <ul className="footerlist nav-social ">
                 <li className="footerlistli social-instagram "><Link href="#" target="_blank"><a className="footer a footer-links li a">
                   <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +59,5 @@ export default function Footer({ footers }) {
         {/* container  */}
       </footer>
     </>
-
   )
-
 }

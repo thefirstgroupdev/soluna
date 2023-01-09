@@ -17,23 +17,15 @@ export default function Home({ homepage, offers, footers, header }) {
 
   return (
     <>
-
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Soluna Beach Club - Dubai beach club" />
         <meta name="keywords" content="Dubai beach club, best beach clubs in Dubai, beach club palm jumeirah, pool clubs in Dubai, beach lounge Dubai, top beach clubs Dubai, beach clubs Dubai offers, beach club membership Dubai, jumeriah beach restaurants, beach club restaurants, beach club Dubai brunch, Risen café Dubai" />
         <meta name="author" content="" />
-
         <title>Soluna Beach Club</title>
-
       </Head>
-
-
-
       <Navbar header={header} />
-
-
       {/* <!-- video section --> */}
       <div id="video" className="section">
         <div className="container" >
@@ -47,12 +39,9 @@ export default function Home({ homepage, offers, footers, header }) {
         </div>
       </div>
       {/* <!-- /video --> */}
-
-
       <div id="about" className='section'>
         <div className="container">
           <div className="row justify-content-space-evenly">
-
             <div className="col-11 col-lg-6 col-xl-5 text-left wow fadeInLeft">
               <h1 className="h1">{homepage.attributes.name}</h1>
               <div className='description'>
@@ -68,36 +57,26 @@ export default function Home({ homepage, offers, footers, header }) {
             <div className="col-11 col-lg-6 col-xl-6 text-center wow fadeInRight">
               <div className="img-special"><img src={`http://localhost:1337${homepage.attributes.featured_image.data.attributes.url}`} className="img-fluid border-radius" /></div>
             </div>
-
           </div>
         </div>
         {/* <!-- /container --> */}
       </div>
-
-
       {/* <!-- restaurants --> */}
       <div id="restaurants" className='section'>
         <div className="container-fluid">
-
           <div className="row justify-content-center bg-elementA">
             <div className="col-11 col-lg-9 col-xl-6 text-center">
               <h2 className="h2 wow fadeInDown">{homepage.attributes.sub_section.title}</h2>
               <p>{homepage.attributes.sub_section.description}</p>
               <Link href={`http://localhost:3000${homepage.attributes.sub_section.link}`}><a className="Link btn btn-link">Find out more</a></Link>
-              
             </div>
           </div>
-          
-
           <ImagesSlider homepage={homepage} />
-
         </div>
         {/* <!-- /container --> */}
       </div>
       <div id="offers">
         <Offers offers={offers} /></div>
-
-
       {/* <!-- instagram gallery feed --> */}
       <div id="instagram" className='section'>
         <div className="container-fluid" >
@@ -111,18 +90,14 @@ export default function Home({ homepage, offers, footers, header }) {
               Follow us on Instagram
             </a>
           </div>
-
           <div id="insta" >
             <div className="instagallery hidden-xs">
               <iframe className="iframe" width={100} height={100} src="https://www.solunabeachclub.ae/instagram/" title="Instagram" frameBorder="0" allow='' ></iframe>
             </div>
           </div>
         </div>
-
       </div>
-
       <Footer footers={footers} />
-
     </>
   )
 }

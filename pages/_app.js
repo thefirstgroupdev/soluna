@@ -12,8 +12,6 @@ function MyApp({ Component, pageProps }) {
   //   require("bootstrap/dist/js/bootstrap.min.js");
   // }, []);
   return (<>
-
-
     <Component {...pageProps} />
   </>)
 }
