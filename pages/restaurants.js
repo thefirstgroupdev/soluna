@@ -15,19 +15,15 @@ export default function Restaurants({ restaurants, footers, header, homepage }) 
     <>
       <Head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="Soluna Beach Club - Restaurant" />
         <meta name="keywords" content="" />
         <meta name="author" content="" />
-
         <title>Restaurants | Soluna Beach Club</title>
       </Head>
-
       <Navbar header={header} />
-
       <br />
       <br />
-
       <div className="section" >
         <div id="restaurants">
           <div className="container">
@@ -48,26 +44,16 @@ export default function Restaurants({ restaurants, footers, header, homepage }) 
 
         <section id="enas" key={restaurant.id}>
           <div className="container-fluid">
-
-
             <div className="row justify-content-center">
-
               <div className="col-12 col-lg-10">
-
-
-
                 <div className="carousel-layer-bg">
                   <Image src={`http://localhost:1337${restaurant.attributes.logo_image.data.attributes.url}`} alt="Special offer" className="img-fluid" width={1500} height={800} />
                   <div className="carousel-layer-logo"><Image src={`http://localhost:1337${restaurant.attributes.logo.data.attributes.url}`} alt="Restaurants" className="img-fluid" width={500} height={350} /></div>
                 </div>
               </div>
             </div>
-
             <div className="row mt-3 justify-content-center">
-
               <div className="col-11 col-lg-4 mt-3 text-left wow fadeInLeft">
-
-
                 <h2 className='h2'>{restaurant.attributes.name}</h2>
                 <ReactMarkdown>{restaurant.attributes.description}</ReactMarkdown>
                 <div className="text-lg-left">
@@ -79,9 +65,7 @@ export default function Restaurants({ restaurants, footers, header, homepage }) 
               <div className="col-11 col-lg-5 text-center wow fadeInRight">
                 <div className="white-rounded-box">
                   <div className="h3">{restaurant.attributes.opening_hours_title}</div>
-
                   <ReactMarkdown>{restaurant.attributes.opening_hours}</ReactMarkdown>
-
                   <div className="h3 mt-4">{restaurant.attributes.reserve.title}</div>
                   <div>
                     {restaurant.attributes.reserve.phone}<br />
@@ -89,21 +73,14 @@ export default function Restaurants({ restaurants, footers, header, homepage }) 
                     <div><a href={restaurant.attributes.reserve.booking_url} className="btn btn-outline-primary">Book a Table</a></div>
                   </div>
                 </div>
-
               </div>
-
             </div>
           </div>
         </section>
 
       ))}
-
-
-
       <Footer footers={footers} />
     </>
-
-
   )
 
 }
@@ -123,7 +100,6 @@ export async function getServerSideProps() {
       restaurants: restaurantsRes,
       footers: footersRes.data,
       homepage: homepageRes.data,
-
     },
   }
 }
